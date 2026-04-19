@@ -9,11 +9,11 @@ For: \dot{x}=r x-\text{ sinh }\left(x\right)EquationCellChangeTimes-> c3470641be
 
 - i) Sketch the different vector field types that appear when you vary $r$.
 
-So, for this example we can’t solve the equation$ $$ 0=r x-\text{ sinh }\left(x\right)$ analytically. This is what’s known as a transcendental equation, so we have to be a little smarter. You can look up the graph of $y=\text{ sinh }\left(x\right) $and you will get:
+So, for this example we can’t solve the equation$ 0=r x-\text{ sinh }\left(x\right)$ analytically. This is what’s known as a transcendental equation, so we have to be a little smarter. You can look up the graph of $y=\text{ sinh }\left(x\right) $and you will get:
 
 ![Figure 1](/images/part3exercises5b/output_001.png)
 
-From this immediately it should give you hints of why we might expect a pitchfork bifurcation. This looks quite a bit like the graph of $y=x^{3}. $It’s not quite the same, but it has some qualitative features. OK, so to work out the vector fields, we have to plot $y=r x$ for different values of $r \text{ and }$ see whether $r x>\text{ sinh }\left(x\right)$ in which case$ \dot{x}>0$, or vice versa. Clearly for all negative values of $r, \text{ there will }$ be a single point of intersection (at $x=0\right)$ and $r x>\text{ sinh }\left(x\right)$ for $x<0$ and $r x<\text{ sinh }\left(x\right)$ for $x>0$. For instance:
+From this immediately it should give you hints of why we might expect a pitchfork bifurcation. This looks quite a bit like the graph of $y=x^{3}. $It’s not quite the same, but it has some qualitative features. OK, so to work out the vector fields, we have to plot $y=r x$ for different values of r and see whether $r x>\text{ sinh }\left(x\right)$ in which case$ \dot{x}>0$, or vice versa. Clearly for all negative values of r, there will be a single point of intersection (at $x=0\right)$ and $r x>\text{ sinh }\left(x\right)$ for $x<0$ and $r x<\text{ sinh }\left(x\right)$ for $x>0$. For instance:
 
 ![Figure 2](/images/part3exercises5b/output_002.png)
 
@@ -35,7 +35,7 @@ As the value of $r$ increases, the stable fixed points are going to move away fr
 
 ![Figure 5](/images/part3exercises5b/output_005.png)
 
-To plot the bifurcation diagram, we just flip the $r \text{ and } x$ axes:
+To plot the bifurcation diagram, we just flip the r and x axes:
 
 ![Figure 6](/images/part3exercises5b/output_006.png)
 

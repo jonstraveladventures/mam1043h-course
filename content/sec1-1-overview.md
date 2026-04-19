@@ -13,16 +13,14 @@ You do not need to get it. I will aim for this all to be self-contained. However
 
 the best introduction to the subject.
 
-$$
-
-Steven Strogatz actually has some of the material that we will be covering on Youtube (Note that we will only really cover the first two his lectures):$ \text{ here }.$
+Steven Strogatz actually has some of the material that we will be covering on Youtube (Note that we will only really cover the first two his lectures):here.
 
 He has in the past tweeted to this link which has some Python code for some of the examples in the book.
 
 Here are some more links to online courses which you may want to browse.
 
 - Complexity Explorer course on intro to dynamical systems and chaos
-- $Complexity Explorer \text{ course on } \text{ introduction }-\text{ to }-\text{ differential }-\text{ equations }$
+- Complexity Explorer course on introduction-to-differential-equations
 
 Please note, that I will often put in links to Wikipedia articles. One has to be careful about how accurate Wikipedia pages are, and in general if you are writing a scientific research paper, Wikipedia articles are not good to reference. However, for an educational set of notes like this, where I think that it will add useful content, I will be doing so. Wikipedia articles should be read with a critical hat on, and if you want to dig further, look at the references in the articles themselves.
 
@@ -73,16 +71,16 @@ Section 3: Bifurcations (Strogatz chapter 3)
  3.4 Pitchfork bifurcations
  3.5 Combinations of bifurcations
  3.6 Chaos and the logistic map
- 3.7 a) $Imperfect \text{ bifurcations and } \text{ catastrophes }$
+ 3.7 a) Imperfect bifurcations and catastrophes
 
-3.7 b) $Imperfect \text{ bifurcations and } \text{ catastrophes part } 2$
+3.7 b) Imperfect bifurcations and catastrophes part 2
 
 3.8 Exercises for part 3
 
 Section 4: Linear systems in two dimensions (Strogatz chapter 5)
 
-4.1 $Introduction \text{ to linear } \text{ systems in } \text{ two dimensions }$
- 4.2 $Classification \text{ of linear } \text{ systems and } \text{ their origin } \text{ part } 1$
+4.1 Introduction to linear systems in two dimensions
+ 4.2 Classification of linear systems and their origin part 1
 
 4.3 Classification of linear systems and their origin part 2
  4.4 Application: Love affairs

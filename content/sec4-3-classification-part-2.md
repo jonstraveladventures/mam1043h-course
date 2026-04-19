@@ -113,7 +113,7 @@ and of course for $\alpha{}=0$:
 
 ![Figure 5](/images/part4c/output_005.png)
 
-Note that all of these correspond to initial conditions of $\left(x_{o},y_{o}\right)=\left(1,1\right)$. For the periodic solution, the period $T=\frac{2\pi{}}{\omega{}}$. A phase portrait for such a system is known as a **centre**. Here is an example where it’s periodic but the amplitude in $x \text{ and } y$ is different:
+Note that all of these correspond to initial conditions of $\left(x_{o},y_{o}\right)=\left(1,1\right)$. For the periodic solution, the period $T=\frac{2\pi{}}{\omega{}}$. A phase portrait for such a system is known as a **centre**. Here is an example where it’s periodic but the amplitude in x and y is different:
 
 ![Figure 6](/images/part4c/output_006.png)
 

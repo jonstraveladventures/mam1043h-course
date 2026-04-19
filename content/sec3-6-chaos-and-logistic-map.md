@@ -179,7 +179,7 @@ Mathemafrica: Mandelbrot set.
 
 Have a look at this blog-post:
 
-$\text{ https }://\text{ writings }.\text{ stephenwolfram }.\text{ com }/2019/07/\text{ mitchell }-\text{ feigenbaum }-1944-2019-4-66920160910299067185320382/$
+https://writings.stephenwolfram.com/2019/07/mitchell-feigenbaum-1944-2019-4-66920160910299067185320382/
 
 to learn more about Feigenbaum and his constant.
 

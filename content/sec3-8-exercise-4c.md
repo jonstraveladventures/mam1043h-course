@@ -69,7 +69,7 @@ $$
 \dot{x}=x-r x \left(1-x\right)
 $$
 
-Expanding in $x \text{ this is } \text{ just }:$
+Expanding in x this is just:
 
 $$
 \dot{x}=\left(1-r\right)x+r x^{2}

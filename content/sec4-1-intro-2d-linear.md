@@ -27,7 +27,7 @@ $$
 \\\dot{y}=c x+d y
 $$
 
-Where $a, b, c \text{ and } d$ are constant parameters. We can also write this as a matrix equation of the form:
+Where a, b, c and d are constant parameters. We can also write this as a matrix equation of the form:
 
 $$
 \dot{x}=A x

@@ -55,7 +55,7 @@ $$
 \dot{x}=2x-x^{3}
 $$
 
-We can ask what potential would correspond to this? i.e. we need to find a V($$) for which:
+We can ask what potential would correspond to this? i.e. we need to find a V() for which:
 
 $$
 -V'\left(x\right)=2x-x^{3}

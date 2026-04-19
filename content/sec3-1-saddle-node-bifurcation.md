@@ -119,7 +119,7 @@ and plot this this:
 
 ![Figure 6](/images/part3a/output_006.png)
 
-where here we generally write $x \text{ on the } \text{ axis }$ rather than $x^{*} \text{ but }$ we should remember that we are here plotting the positions of the fixed points. We haven’t said anything here about the stability of the fixed points. To find this, we need to know the value of the derivative of $f\left(x\right) \text{ with respect }$ to $x$ at the fixed point. Given
+where here we generally write x on the axis rather than $x^{*} \text{ but }$ we should remember that we are here plotting the positions of the fixed points. We haven’t said anything here about the stability of the fixed points. To find this, we need to know the value of the derivative of $f\left(x\right) \text{ with respect }$ to $x$ at the fixed point. Given
 
 $$
 f\left(x\right)=r-x+e^{ x}

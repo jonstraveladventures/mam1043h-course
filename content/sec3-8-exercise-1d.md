@@ -21,7 +21,7 @@ Now taking the arrows and fixed points alone and plotting them as a vector field
 
 $\dot{x}=r+\frac{x}{2}-\frac{x}{1+x}$
 
-$There \text{ is actually } a \text{ much easier } \text{ way to } \text{ think about } \text{ plotting the } \text{ bifurcation diagram } \text{ than this } \text{ though }. Remember \text{ the equation } \text{ is }: $$\dot{x}=r+\frac{x}{2}-\frac{x}{1+x}$
+There is actually a much easier way to think about plotting the bifurcation diagram than this though. Remember the equation is:$\dot{x}=r+\frac{x}{2}-\frac{x}{1+x}$
 
 The fixed points are found by solving for $\dot{x}=0$. There are two solutions as it results in a quadratic equation.
 

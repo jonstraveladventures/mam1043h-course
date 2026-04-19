@@ -135,10 +135,29 @@ def unescape_mma_string(s: str) -> str:
     return s
 
 
+_INLINE_MATH_RE = re.compile(r'\$([^$\n]*)\$')
+_ALLOWED_CHARS_RE = re.compile(r"^[A-Za-z0-9\s\-,.:;!?()/']*$")
+
+
+def _unwrap_text_only_math(match: "re.Match[str]") -> str:
+    inner = match.group(1)
+    # Only unwrap if at least one \text{} is present AND the non-\text residue
+    # is plain prose (letters, digits, spaces, simple punctuation).
+    if r'\text{' not in inner:
+        return match.group(0)
+    residue = re.sub(r'\\text\{[^{}]*\}', '', inner)
+    if not _ALLOWED_CHARS_RE.match(residue):
+        return match.group(0)
+    unwrapped = re.sub(r'\\text\{\s*([^{}]*?)\s*\}', r'\1', inner)
+    return re.sub(r'\s+', ' ', unwrapped).strip()
+
+
 def clean_text_whitespace(s: str) -> str:
     """Collapse runs of whitespace in plain prose (not math)."""
     s = re.sub(r'[ \t]+', ' ', s)
     s = re.sub(r'\n{3,}', '\n\n', s)
+    # Unwrap $...$ blocks that only contain \text{} fragments (plus prose)
+    s = _INLINE_MATH_RE.sub(_unwrap_text_only_math, s)
     # Strip leaked Mathematica metadata
     s = re.sub(r'\\?InputExpressionUUID->[\w-]+', '', s)
     s = re.sub(r'\\?ExpressionUUID->[\w-]+', '', s)
@@ -237,6 +256,8 @@ def inline_cell_to_md(cell_node: list) -> str:
     content = cell_node[1]
     if isinstance(content, list) and content and content[0] == "BoxData":
         latex = boxdata_to_latex(content)
+        if not latex.strip():
+            return ""
         return f"${latex}$"
     return ""
 
@@ -362,7 +383,7 @@ def cell_to_md(cell: list, image_counter: list[int], images_dir: str,
     # ── Inline math inside Text as BoxData ──────────────────────────────────
     if cell_type in ("InlineFormula",):
         latex = extract_display_math(content)
-        return f"${latex}$" if latex else None
+        return f"${latex}$" if latex and latex.strip() else None
 
     # ── Anything else — skip ────────────────────────────────────────────────
     return None
@@ -536,6 +557,29 @@ def main():
 
     md = make_frontmatter(title, args.weight)
     md += "\n\n".join(blocks)
+
+    # Final scrub: drop orphan `$$` lines (not part of a proper open/close pair).
+    # A proper pair is: `$$` on its own line, some non-`$$` content, `$$` on its own line.
+    lines = md.split("\n")
+    # indices of lines whose trimmed content is exactly `$$`
+    dd_idx = [i for i, l in enumerate(lines) if l.strip() == "$$"]
+    kept = set()
+    i = 0
+    while i < len(dd_idx) - 1:
+        a, b = dd_idx[i], dd_idx[i + 1]
+        # Body between them must not be empty — empty means orphan pair
+        body_lines = lines[a + 1:b]
+        if any(ln.strip() for ln in body_lines):
+            kept.add(a)
+            kept.add(b)
+            i += 2
+        else:
+            # empty block — drop both
+            i += 2
+    # Any remaining unpaired (odd-count tail) is dropped
+    remove = set(dd_idx) - kept
+    md = "\n".join(l for idx, l in enumerate(lines) if idx not in remove)
+    md = re.sub(r'\n{3,}', '\n\n', md)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(md, encoding="utf-8")

@@ -75,7 +75,7 @@ $$
 \dot{N}=R N\left(1-\frac{N}{K}\right)-\frac{B N^{2}}{A^{2}+N^{2}}
 $$
 
-Which has four free parameters, $R,k,B \text{ and } x$, and N is the population of insects. It’s possible to convert this into an expression involving only non-dimensional variables, which can be written as:
+Which has four free parameters, R,k,B and x, and N is the population of insects. It’s possible to convert this into an expression involving only non-dimensional variables, which can be written as:
 
 $$
 \dot{x}=r x \left(1-\frac{x}{k}\right)-\frac{x^{ 2}}{1+x^{ 2}}

@@ -9,7 +9,7 @@ For: \dot{x}=r x-\text{ ln }\left(1+x\right)EquationCellChangeTimes-> c3470641be
 
 - i) Sketch the different vector field types that appear when you vary $r$.
 
-We’re going to do this a little differently from how we ’ve done the others. To draw the vector field, you need to be able to draw whether $\dot{x}$ is greater than or less than zero, which is the same as asking, in this case, whether $r x \text{ is greater } \text{ than or } \text{ less than } \text{ ln }\left(1+x\right)$. Let’s plot each of these for different values of $r \text{ and then } \text{ draw arrows } \text{ on the } \text{ diagrams }:$
+We’re going to do this a little differently from how we ’ve done the others. To draw the vector field, you need to be able to draw whether $\dot{x}$ is greater than or less than zero, which is the same as asking, in this case, whether $r x \text{ is greater } \text{ than or } \text{ less than } \text{ ln }\left(1+x\right)$. Let’s plot each of these for different values of r and then draw arrows on the diagrams:
 
 ![Figure 1](/images/part3exercises4b/output_001.png)
 
@@ -35,7 +35,7 @@ $$
 \dot{x}=\left(r-1\right)x+\frac{x^{2}}{2}
 $$
 
-We want the $x^{2} \text{ term on } \text{ it }$s own so let's multiply through by $2 \text{ and we } \text{ get }:$
+We want the $x^{2} \text{ term on } \text{ it }$s own so let's multiply through by 2 and we get:
 
 $$
 2\dot{x}=2\left(r-1\right)x+x^{2}
@@ -65,7 +65,7 @@ $$
 T=\frac{t}{2}
 $$
 
-$\text{ so } $
+so
 
 $$
 2\frac{\text{ dX }}{\text{ dt }}=2\frac{\text{ dT }}{\text{ dt }}\frac{\text{ dX }}{\text{ dT }}=\frac{2}{2}\frac{\text{ dX }}{\text{ dT }}

@@ -9,7 +9,7 @@ For: \dot{x}=r \text{ ln }\left(x\right)+x-1EquationCellChangeTimes-> c3470641be
 
 - i) Sketch the different vector field types that appear when you vary $r$.
 
-We’re going to do this a little differently from how we ’ve done the others. To draw the vector field, you need to be able to draw whether $\dot{x}$ is greater than or less than zero, which is the same as asking, in this case, whether $r \text{ ln }\left(x\right) \text{ is greater } \text{ than or } \text{ less than } 1-x$. Let’s first ask this question for positive $r.$ This is actually the same as comparing $\text{ ln }\left(x\right) \text{ and } \frac{1-x}{r}.$ So let’s plot this for different values of positive $r \text{ and draw } \text{ arrows on } \text{ the diagrams }:$
+We’re going to do this a little differently from how we ’ve done the others. To draw the vector field, you need to be able to draw whether $\dot{x}$ is greater than or less than zero, which is the same as asking, in this case, whether $r \text{ ln }\left(x\right) \text{ is greater } \text{ than or } \text{ less than } 1-x$. Let’s first ask this question for positive $r.$ This is actually the same as comparing $\text{ ln }\left(x\right) \text{ and } \frac{1-x}{r}.$ So let’s plot this for different values of positive r and draw arrows on the diagrams:
 
 ![Figure 1](/images/part3exercises4e/output_001.png)
 
@@ -78,7 +78,7 @@ $$
 T=\frac{t}{R-2}
 $$
 
-$\text{ so } $
+so
 
 $$
 \left(R-2\right)\frac{\text{ dX }}{\text{ dt }}=\left(R-2\right)\frac{\text{ dT }}{\text{ dt }}\frac{\text{ dX }}{\text{ dT }}=\frac{\left(R-2\right)}{R-2}\frac{\text{ dX }}{\text{ dT }}

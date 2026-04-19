@@ -125,7 +125,7 @@ and locally it is precisely the same as the normal form of a transcritical bifur
 
 There’s another way that we can think about finding the bifurcation diagram if you don’t want to plot the graph of $f\left(x\right)=r \text{ ln }\left(x\right)+x-1$, and find its zeros (and I don’t blame you...).
 
-If we want to know when this function is zero, we can simply calculate when the graphs of $y=r \text{ ln }\left(x\right) \text{ and } y=1-x$ intercept. The point is that then the $r \text{ is just } $a scaling factor. Plotting this for a range of values of $r \text{ we see }:$
+If we want to know when this function is zero, we can simply calculate when the graphs of $y=r \text{ ln }\left(x\right) \text{ and } y=1-x$ intercept. The point is that then the r is justa scaling factor. Plotting this for a range of values of r we see:
 
 ![Figure 7](/images/part3b/output_007.png)
 

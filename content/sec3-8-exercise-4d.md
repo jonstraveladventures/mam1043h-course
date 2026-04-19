@@ -19,7 +19,7 @@ In fact there’s going to be a situation where ’s there’s only one fixed po
 
 ![Figure 1](/images/part3exercises4d/output_001.png)
 
-Of course we were just looking at $r=2 \text{ here }$ but we can do the same thing for any value of $r>1$ and we will get the same thing, just with our 2's replaced by the value of $r.$ We have to be a bit more careful with the region for $0<r<1$, as in this the value of $x \text{ where } r-e^{x}$ changes sign, $x \text{ is negative }$ rather than positive.
+Of course we were just looking at $r=2 \text{ here }$ but we can do the same thing for any value of $r>1$ and we will get the same thing, just with our 2's replaced by the value of $r.$ We have to be a bit more careful with the region for $0<r<1$, as in this the value of $x \text{ where } r-e^{x}$ changes sign, x is negative rather than positive.
 
 For $r=1$, there’s only a single fixed point, which, unsurprisingly, is semi-stable. $ \dot{x}<0$ everywhere except at $x=0 \text{ where it } \text{ is zero }.$
 

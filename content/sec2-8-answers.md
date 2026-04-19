@@ -65,7 +65,7 @@ $$
 \dot{x}=3 x-4 x^{2}+x^{3}
 $$
 
-We can simply take the linear term, and for small $x$ ignore the higher order terms...remember that we are asking about what happens when $x \text{ is small }$. So the linear approximation is:
+We can simply take the linear term, and for small $x$ ignore the higher order terms...remember that we are asking about what happens when x is small. So the linear approximation is:
 
 $$
 \dot{x}=3 x
@@ -77,7 +77,7 @@ $$
 x=x_{0}e^{3t}
 $$
 
-This fixed point is unstable because as $t \text{ increases }, \text{ we will } \text{ move further } \text{ from it }.$
+This fixed point is unstable because as t increases, we will move further from it.
 
 Now looking at the fixed point at $x=1, \text{ now } $we can let $x=1+\eta{}:$
 
@@ -137,7 +137,7 @@ $$
 \frac{d x}{d t}=4x^{2}
 $$
 
-Taking everything in $x \text{ to the } $left and $t$ to the right, and integrating we have:
+Taking everything in x to theleft and $t$ to the right, and integrating we have:
 
 $$
 \int{}\frac{1}{4x^{2}}\mathrm{d}x=\int{}1\mathrm{d}t
@@ -167,7 +167,7 @@ $$
 x=\frac{x_{0}}{\left(1-4t x_{0}\right)}
 $$
 
-which, for positive $x_{0}, $as $t$ increasing, moves away from $x=0$, and for negative $x_{0},$ as $t \text{ increases }$, moves towards $x=0$ - ie. this is a semi-stable fixed point.
+which, for positive $x_{0}, $as $t$ increasing, moves away from $x=0$, and for negative $x_{0},$ as t increases, moves towards $x=0$ - ie. this is a semi-stable fixed point.
 
 For the second fixed point, at $x=4, $we can let $x=4+\eta{}$ which gives:
 
