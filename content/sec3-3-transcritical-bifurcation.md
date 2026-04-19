@@ -156,3 +156,7 @@ $$
 $$
 
 and put this equation into normal form via a change of variables.
+## Animated versions
+
+![Animation 1](/images/part3b/anim_001.gif)
+

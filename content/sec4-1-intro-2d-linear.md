@@ -244,3 +244,9 @@ We can do the same thing for other values of initial conditions and values of $a
 Now try and plot the trajectories for some of these different initial conditions and values of $a$.
 
 You will explore the fixed point structure of this system in the Exercises for part 4.
+## Animated versions
+
+![Animation 1](/images/part4a/anim_001.gif)
+
+![Animation 2](/images/part4a/anim_002.gif)
+

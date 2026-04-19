@@ -6,3 +6,7 @@ math: true
 ## Section 1 Exercises: Introduction
 
 ![Figure 1](/images/part1exercises/output_001.png)
+## Animated versions
+
+![Animation 1](/images/part1exercises/anim_001.gif)
+
