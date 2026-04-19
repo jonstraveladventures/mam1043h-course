@@ -58,3 +58,9 @@ This is an example of a very special solution.
 Well, it seems that writing down differential equations can be important to understanding how things change with time.
 
 This course will be about******trying to be as lazy as possible****(****but no lazier****)**: getting answers without having to solve the differential equations (though sometimes we will).
+---
+
+## Animated versions
+
+![Animation 1](/images/part1b/anim_001.gif)
+
