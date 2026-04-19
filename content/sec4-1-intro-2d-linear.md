@@ -15,9 +15,9 @@ In this section we are going to make a leap into the plane (Into the world of tw
 
 1. A system in two ‘spatial’ dimensions, say $x$ and $y,$ each of which depends on time and is governed by only first derivatives.
 
-2. A system in one dimension whose dynamics is governed by a second derivative.
+1. A system in one dimension whose dynamics is governed by a second derivative.
 
-3. A non-autonomous system in one dimension whose dynamics is governed by a first derivative.
+1. A non-autonomous system in one dimension whose dynamics is governed by a first derivative.
 
 All would lead to two first order differential equations (Make sure that you can see this, otherwise ask!)
 
@@ -244,9 +244,11 @@ We can do the same thing for other values of initial conditions and values of $a
 Now try and plot the trajectories for some of these different initial conditions and values of $a$.
 
 You will explore the fixed point structure of this system in the Exercises for part 4.
+
+
 ## Animated versions
 
-![Animation 1](/images/part4a/anim_001.gif)
+![Animation](/images/part4a/anim_001.gif)
 
-![Animation 2](/images/part4a/anim_002.gif)
+![Animation](/images/part4a/anim_002.gif)
 

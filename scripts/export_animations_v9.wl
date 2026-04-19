@@ -39,10 +39,13 @@ processNotebook[nbName_, partDir_] := Module[
 
   Module[{$captureFn, ctx},
     ctx = "AnimCapture`";
+    (* Trigger lazy-load of ListAnimate/Animate so we can clear their autoload stubs *)
+    Quiet[System`ListAnimate[{1, 2}]];
+    Quiet[System`Animate[1, {x, 1, 2}]];
     Unprotect[System`ListAnimate, System`Animate];
     ClearAll[System`ListAnimate, System`Animate];
     System`ListAnimate[lst_List, ___] := Module[{fname, sig},
-      If[Length[lst] < 2, Return[Null]];
+      If[Length[lst] < 5, Return[Null]];
       sig = Hash[lst];
       If[sig === lastExportedSig,
         Print["  [skip] duplicate of previous export"];
@@ -83,7 +86,7 @@ processNotebook[nbName_, partDir_] := Module[
     ];
     System`Animate[body_, iter_List, ___] := Module[{frames, fname},
       frames = Quiet[Check[Table[body, iter], $Failed]];
-      If[frames =!= $Failed && ListQ[frames] && Length[frames] >= 2,
+      If[frames =!= $Failed && ListQ[frames] && Length[frames] >= 3,
         Module[{sig = Hash[frames]},
           If[sig =!= lastExportedSig,
             lastList = frames;

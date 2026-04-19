@@ -311,13 +311,13 @@ $$
 
 ![Figure 14](/images/part2answers/output_014.png)
 
-4. a) is the bottom left
+1. a) is the bottom left
 
-4. b) is the top left
+1. b) is the top left
 
-4. c) is the top right
+1. c) is the top right
 
-4. d) is the bottom right
+1. d) is the bottom right
 
 5) For a stable fixed point, the function, f(x), must pass from positive to negative through the fixed point. This means that to the left the function must be positive, and to the right it must be negative. If you had two stable fixed points next to each other then somehow the function would have to go from being negative to the right of the first, to positive to the left of the second. That is only possible if the function passes through the horizontal axis (in which case you have an unstable fixed point in between them) or if there is a discontinuity in the function.
 

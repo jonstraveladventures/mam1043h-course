@@ -53,7 +53,7 @@ On the left we see the path taken through phase space. At any one time the pendu
 
 1. The path in phase space is periodic - after a certain amount of time, we get back to where we started, not just in terms of position, but also velocity - That should make sense for a swinging pendulum.
 
-2. When we cross the $x_{1} $axis, this corresponds to the moments where $x_{2}$is zero (angular velocity being zero). These points are when the pendulum has momentarily stopped at the far left and right of its swing.
+1. When we cross the $x_{1} $axis, this corresponds to the moments where $x_{2}$is zero (angular velocity being zero). These points are when the pendulum has momentarily stopped at the far left and right of its swing.
 
 This was a very particular starting position in phase space. Let ’s look at another:
 

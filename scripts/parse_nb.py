@@ -154,7 +154,14 @@ def _unwrap_text_only_math(match: "re.Match[str]") -> str:
 
 def clean_text_whitespace(s: str) -> str:
     """Collapse runs of whitespace in plain prose (not math)."""
-    s = re.sub(r'[ \t]+', ' ', s)
+    # Preserve leading whitespace on each line (for list-item continuation
+    # and sub-item indent). Collapse runs of spaces/tabs only in the interior
+    # of lines.
+    def _collapse_interior_ws(line: str) -> str:
+        m = re.match(r'^([ \t]*)(.*)$', line)
+        lead, rest = m.group(1), m.group(2)
+        return lead + re.sub(r'[ \t]+', ' ', rest)
+    s = '\n'.join(_collapse_interior_ws(ln) for ln in s.split('\n'))
     s = re.sub(r'\n{3,}', '\n\n', s)
     # Unwrap $...$ blocks that only contain \text{} fragments (plus prose)
     s = _INLINE_MATH_RE.sub(_unwrap_text_only_math, s)
@@ -163,16 +170,18 @@ def clean_text_whitespace(s: str) -> str:
     s = re.sub(r'\\?ExpressionUUID->[\w-]+', '', s)
     # Remove orphaned brace lines
     s = re.sub(r'(?m)^\s*[{}]\s*$', '', s)
-    # Convert N) enumeration to Markdown numbered lists
-    s = re.sub(r'(?m)^(\d+)\)\s*', r'\1. ', s)
-    # Convert a), b), c) sub-enumeration to indented sub-items
-    s = re.sub(r'(?m)^([a-z])\)\s*', r'   - \1) ', s)
-    # Also handle indented sub-items: "   a) text" → "   - a) text"
-    s = re.sub(r'(?m)^ {2,}([a-z])\)\s*', r'   - \1) ', s)
-    # Convert bullet-style items: "• item" or "∘ item" → "- item"
+    # Convert N) enumeration at line start to Markdown "1." so Markdown
+    # auto-numbers (handles author typos like "1), 2), 2)" in the source).
+    s = re.sub(r'(?m)^\d+\)\s+', '1. ', s)
+    # Convert a), b), c) sub-enumeration to indented sub-items (preserve letter)
+    s = re.sub(r'(?m)^([a-z])\)\s+', r'    - \1) ', s)
+    # Also handle indented sub-items: "   a) text" → "    - a) text"
+    s = re.sub(r'(?m)^ {2,}([a-z])\)\s+', r'    - \1) ', s)
+    # Convert top-level bullet chars: "• item" or "∘ item" → "- item"
     s = re.sub(r'(?m)^[•∘]\s*', '- ', s)
-    # Merge continuation lines (indented, NOT starting with a list marker) into prev line
-    s = re.sub(r'\n {2,}(?![-\d])', ' ', s)
+    # Convert indented sub-bullet chars (1+ leading spaces + ∘/◦) to sub-item
+    s = re.sub(r'(?m)^ +[∘◦]\s*', '    - ', s)
+    s = re.sub(r'(?m)^ +•\s*', '    - ', s)
     return s.strip()
 
 
@@ -359,9 +368,17 @@ def cell_to_md(cell: list, image_counter: list[int], images_dir: str,
         return None
 
     # ── List items ──────────────────────────────────────────────────────────
-    if cell_type in ("Item", "ItemParagraph"):
+    if cell_type in ("Item", "ItemParagraph", "Item1", "Item1Exercise"):
         text = extract_text(content)
         return f"- {text}" if text else None
+
+    if cell_type in ("Subitem", "Subitem1", "Item2", "Item2Exercise"):
+        text = extract_text(content)
+        return f"    - {text}" if text else None
+
+    if cell_type in ("Subsubitem", "Subsubitem1", "Item3"):
+        text = extract_text(content)
+        return f"        - {text}" if text else None
 
     if cell_type in ("ItemNumbered",):
         text = extract_text(content)

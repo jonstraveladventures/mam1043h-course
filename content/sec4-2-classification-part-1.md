@@ -342,7 +342,9 @@ One thing which is very important to note here is that when we get close to the 
 And unsurprisingly, if the eigenvalues are both positive, everything is going to explode out from the centre: Exactly the same as the above but you can imagine it all going the other way.
 
 Let’s stop there for now and in the next lesson we will look at what happens when we have complex eigenvalues.
+
+
 ## Animated versions
 
-![Animation 1](/images/part4b/anim_001.gif)
+![Animation](/images/part4b/anim_001.gif)
 
