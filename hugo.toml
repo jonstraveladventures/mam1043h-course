@@ -1,0 +1,19 @@
+baseURL = "https://jonstraveladventures.github.io/mam1043h-course/"
+languageCode = "en-gb"
+title = "MAM1043H — Introduction to Nonlinear Dynamics"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.goldmark.extensions.passthrough]
+  enable = true
+
+[markup.goldmark.extensions.passthrough.delimiters]
+  block = [['$$', '$$']]
+  inline = [['$', '$']]
+
+[markup.highlight]
+  noClasses = false
+
+[params]
+  description = "First Year Introduction to Nonlinear Dynamics course notes, UCT"

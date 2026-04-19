@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="home">
+  <h1>MAM1043H — Introduction to Nonlinear Dynamics</h1>
+  <p class="lead">First year course notes based on Strogatz's <em>Nonlinear Dynamics and Chaos</em>, University of Cape Town.</p>
+  <p class="lead">Textbook: <em>Nonlinear Dynamics and Chaos</em> by Steven H. Strogatz.</p>
+
+  <nav class="toc">
+    {{ $pages := .Site.RegularPages.ByWeight }}
+
+    <h2>Section 1: Introduction</h2>
+    <ul>
+      {{ range $pages }}{{ if and (ge .Weight 11) (lt .Weight 20) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}{{ end }}
+    </ul>
+
+    <h2>Section 2: Flows on the Line</h2>
+    <ul>
+      {{ range $pages }}{{ if and (ge .Weight 21) (lt .Weight 31) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}{{ end }}
+    </ul>
+
+    <h2>Section 3: Bifurcations</h2>
+    <ul>
+      {{ range $pages }}{{ if and (ge .Weight 31) (lt .Weight 60) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}{{ end }}
+    </ul>
+
+    <h2>Section 4: Linear Systems in Two Dimensions</h2>
+    <ul>
+      {{ range $pages }}{{ if and (ge .Weight 61) (lt .Weight 100) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}{{ end }}
+    </ul>
+  </nav>
+</div>
+{{ end }}

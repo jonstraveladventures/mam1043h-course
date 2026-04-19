@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "nav.html" . }}
+  <main class="content">
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <p>MAM1043H · University of Cape Town · Based on Strogatz's <em>Nonlinear Dynamics and Chaos</em></p>
+    <p>Graphics generated with <a href="https://www.wolfram.com/mathematica/">Wolfram Mathematica</a></p>
+  </footer>
+</body>
+</html>
