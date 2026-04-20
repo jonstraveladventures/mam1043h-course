@@ -107,13 +107,43 @@ processNotebook[nbName_, partDir_] := Module[
   ];
 
   Do[
-    Module[{cellExpr, r},
+    Module[{cellExpr, held, topN, sub, ceLen, heldArgs, heldArg, r},
       cellExpr = NotebookRead[inputCells[[i]]];
       If[Head[cellExpr] =!= Cell, Continue[]];
-      r = TimeConstrained[
-        Quiet[Check[ToExpression[cellExpr[[1]]], $Failed]],
-        60, $TimedOut];
-      If[ListQ[r] && Length[r] >= 2, lastList = r];
+      (* Parse as held expression.  ToExpression[..., Hold] returns
+         Hold[s1, s2, ...] for multi-statement cells.  A statement that
+         ends with `;` parses as Hold[CompoundExpression[expr, Null]],
+         which would eval to Null and never expose a list to update
+         lastList.  So we unfold one level of CompoundExpression and
+         evaluate each sub-arg individually so `Table[...]; ListAnimate[%]`
+         can see the Table's list via lastList. *)
+      held = Quiet[Check[
+        ToExpression[cellExpr[[1]], StandardForm, Hold], $Failed]];
+      If[held === $Failed || Head[held] =!= Hold, Continue[]];
+      topN = Length[held];
+      heldArgs = {};
+      Do[
+        sub = Extract[held, {k}, Hold];
+        If[MatchQ[sub, Hold[_CompoundExpression]],
+          ceLen = Replace[sub,
+            {Hold[_[a___]] :> Length[Hold[a]], _ :> 0}];
+          Do[
+            AppendTo[heldArgs, Extract[held, {k, m}, Hold]];
+            , {m, ceLen}];
+          ,
+          AppendTo[heldArgs, sub];
+        ];
+        , {k, topN}];
+      Do[
+        heldArg = heldArgs[[k]];
+        heldArg = heldArg /. {
+          HoldPattern[Out[]] :> lastList,
+          HoldPattern[Out[_]] :> lastList};
+        r = TimeConstrained[
+          Quiet[Check[ReleaseHold[heldArg], $Failed]],
+          60, $TimedOut];
+        If[ListQ[r] && Length[r] >= 2, lastList = r];
+        , {k, Length[heldArgs]}];
     ],
     {i, Length[inputCells]}
   ];

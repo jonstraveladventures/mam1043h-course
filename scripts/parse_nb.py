@@ -249,6 +249,79 @@ def _unindent_orphan_prose(s: str) -> str:
     return '\n'.join(out)
 
 
+# ToC line: "1.1 Overview", "1.2 a) History", "2.7 b) Back to basics" etc.
+# The digit-dot-digit prefix is the section number; optional letter-paren is
+# a sub-section marker. The rest is the title.
+_TOC_LINE_RE = re.compile(r'^\s*(\d+\.\d+)\s*([a-z]\))?\s+(\S.*\S)\s*$')
+
+
+def _bulletize_toc_lines(s: str) -> str:
+    """Convert runs of 2+ ToC-style lines into a Markdown bullet list."""
+    lines = s.split('\n')
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        # Gather a run of ToC lines (possibly separated by blank lines).
+        j = i
+        toc_hits: list[tuple[int, re.Match]] = []
+        while j < len(lines):
+            if _TOC_LINE_RE.match(lines[j]):
+                toc_hits.append((j, _TOC_LINE_RE.match(lines[j])))
+                j += 1
+            elif lines[j].strip() == '':
+                # Blank line — allow a single blank separator between ToC entries.
+                # Only continue if the NEXT non-blank line is also a ToC line.
+                k = j
+                while k < len(lines) and lines[k].strip() == '':
+                    k += 1
+                if k < len(lines) and _TOC_LINE_RE.match(lines[k]):
+                    j = k
+                else:
+                    break
+            else:
+                break
+        if len(toc_hits) >= 2:
+            # Consume lines i..j-1, emit as bullets.
+            if out and out[-1].strip():
+                out.append('')
+            for _, m in toc_hits:
+                num, letter, title = m.group(1), m.group(2), m.group(3)
+                sub = f" {letter}" if letter else ""
+                out.append(f"- {num}{sub} {title}")
+            out.append('')
+            i = j
+        else:
+            out.append(lines[i])
+            i += 1
+    # Second pass: bulletize single TOC lines that sit isolated between
+    # blank lines (or Section headers / other bullet lines), e.g. the
+    # "1.6 Exercises..." line that sits alone between two bullet clusters.
+    final: list[str] = []
+    for idx, ln in enumerate(out):
+        m = _TOC_LINE_RE.match(ln)
+        if not m or ln.lstrip().startswith('- '):
+            final.append(ln)
+            continue
+        # Previous non-blank line
+        prev_nb = next((out[k] for k in range(idx - 1, -1, -1) if out[k].strip()), None)
+        # Next non-blank line
+        next_nb = next((out[k] for k in range(idx + 1, len(out)) if out[k].strip()), None)
+        def _tocish(s: str | None) -> bool:
+            if s is None:
+                return False
+            t = s.lstrip()
+            return (t.startswith('- ') and _TOC_LINE_RE.match(t[2:])) or \
+                   bool(re.match(r'^Section\s+\d+[:.]', t)) or \
+                   bool(_TOC_LINE_RE.match(t))
+        if _tocish(prev_nb) or _tocish(next_nb):
+            num, letter, title = m.group(1), m.group(2), m.group(3)
+            sub = f" {letter}" if letter else ""
+            final.append(f"- {num}{sub} {title}")
+        else:
+            final.append(ln)
+    return '\n'.join(final)
+
+
 def clean_text_whitespace(s: str) -> str:
     """Collapse runs of whitespace in plain prose (not math)."""
     # Preserve leading whitespace on each line (for list-item continuation
@@ -291,6 +364,11 @@ def clean_text_whitespace(s: str) -> str:
     # a 4+ space indent on a prose line whose previous non-blank line is
     # not a list item would render as a Markdown code block. Strip it.
     s = _unindent_orphan_prose(s)
+    # Convert runs of ToC-style lines into a Markdown bullet list so they
+    # render as a list instead of a wall of short paragraphs. Matches lines
+    # starting with N.N, N.N a), N.N a (etc.) when 2+ appear in a row
+    # (possibly separated by blank lines).
+    s = _bulletize_toc_lines(s)
     # Drop trailing-whitespace-only lines (e.g. "    \n") left after
     # un-indenting — they'd otherwise linger as visible blank indented lines.
     s = re.sub(r'(?m)^[ \t]+$', '', s)
@@ -742,6 +820,11 @@ def main():
     remove = set(dd_idx) - kept
     md = "\n".join(l for idx, l in enumerate(lines) if idx not in remove)
     md = re.sub(r'\n{3,}', '\n\n', md)
+    # Final document-wide pass to bulletize any ToC entries that sit between
+    # separate Text cells (each cell is cleaned independently, so a stranded
+    # "1.6 Exercises..." between the 1.3–1.5 cluster and the Section 2 header
+    # only becomes visible once the full document is assembled).
+    md = _bulletize_toc_lines(md)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(md, encoding="utf-8")

@@ -182,3 +182,12 @@ Where the red dots are fixed points, and in fact there’s a continuous line of 
 One can plot the regions in the space of Δ’s and τ’s which type of solutions you will get and this looks like:
 
 ![Figure 11](/images/part4c/output_011.png)
+
+## Animated versions
+
+![Animation](/images/part4c/anim_001.gif)
+
+![Animation](/images/part4c/anim_002.gif)
+
+![Animation](/images/part4c/anim_003.gif)
+

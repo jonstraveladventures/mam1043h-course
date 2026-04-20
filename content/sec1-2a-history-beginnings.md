@@ -62,3 +62,8 @@ Well, it seems that writing down differential equations can be important to unde
 - Sometimes we can't solve these differential equations.
 
 This course will be about******trying to be as lazy as possible****(****but no lazier****)**: getting answers without having to solve the differential equations (though sometimes we will).
+
+## Animated versions
+
+![Animation](/images/part1b/anim_001.gif)
+

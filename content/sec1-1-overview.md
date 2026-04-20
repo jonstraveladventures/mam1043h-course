@@ -39,53 +39,54 @@ The Course Content:
 
 Section 1: Introduction (Strogatz chapter 1)
 
-1.1 Overview of the course (what you're reading now)
-1.2 a) The history of dynamics - The beginnings of dynamics
-1.2 b) The history of dynamics - Poincare and chaos
+- 1.1 Overview of the course (what you're reading now)
+- 1.2 a) The history of dynamics - The beginnings of dynamics
+- 1.2 b) The history of dynamics - Poincare and chaos
 
 Aside: Difference equations
-1.3 Systems of differential equations
-1.4 Phase space
-1.5 The spectrum of systems of differential equations
 
-1.6 Exercises for part 1
+- 1.3 Systems of differential equations
+- 1.4 Phase space
+- 1.5 The spectrum of systems of differential equations
+
+- 1.6 Exercises for part 1
 
 Section 2: Flows on the line (Strogatz chapter 2)
 
-2.1 Fixed points and trajectories
-2.2 Fixed Points and their stability
-2.3 Linear stability analysis
-2.4 Existence and uniqueness of solutions
-2.5 Absence of oscillations
-2.6 Potentials
-2.7 a) Solving equations on the computer
+- 2.1 Fixed points and trajectories
+- 2.2 Fixed Points and their stability
+- 2.3 Linear stability analysis
+- 2.4 Existence and uniqueness of solutions
+- 2.5 Absence of oscillations
+- 2.6 Potentials
+- 2.7 a) Solving equations on the computer
 
-2.7 b) Back to basics: A summary of phase spaces and phase portraits
+- 2.7 b) Back to basics: A summary of phase spaces and phase portraits
+- 2.8 Exercises for part 2
 
-2.8 Exercises for part 2
 
 Section 3: Bifurcations (Strogatz chapter 3)
 
-3.1 and 3.2 Introduction and saddle-node bifurcations 
-3.3 Transcritical bifurcations 
-3.4 Pitchfork bifurcations
-3.5 Combinations of bifurcations
-3.6 Chaos and the logistic map
-3.7 a) Imperfect bifurcations and catastrophes
+- 3.1 and 3.2 Introduction and saddle-node bifurcations
+- 3.3 Transcritical bifurcations
+- 3.4 Pitchfork bifurcations
+- 3.5 Combinations of bifurcations
+- 3.6 Chaos and the logistic map
+- 3.7 a) Imperfect bifurcations and catastrophes
 
-3.7 b) Imperfect bifurcations and catastrophes part 2
+- 3.7 b) Imperfect bifurcations and catastrophes part 2
+- 3.8 Exercises for part 3
 
-3.8 Exercises for part 3
 
 Section 4: Linear systems in two dimensions (Strogatz chapter 5)
 
-4.1 Introduction to linear systems in two dimensions
-4.2 Classification of linear systems and their origin part 1
+- 4.1 Introduction to linear systems in two dimensions
+- 4.2 Classification of linear systems and their origin part 1
 
-4.3 Classification of linear systems and their origin part 2
-4.4 Application: Love affairs
+- 4.3 Classification of linear systems and their origin part 2
+- 4.4 Application: Love affairs
 
-4.5 Exercises for part 4
+- 4.5 Exercises for part 4
 
 ## Chapter 1: Introduction
 

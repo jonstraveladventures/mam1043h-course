@@ -161,3 +161,7 @@ and put this equation into normal form via a change of variables.
 
 ![Animation](/images/part3b/anim_001.gif)
 
+![Animation](/images/part3b/anim_002.gif)
+
+![Animation](/images/part3b/anim_003.gif)
+

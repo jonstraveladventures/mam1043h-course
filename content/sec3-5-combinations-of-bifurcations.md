@@ -158,3 +158,8 @@ Here is a really strange example of hysteresis: If you take water at room temper
 There is information in the system about what happened to it in the past (you can think of it as remembering that it was in a high temperature state - though note very very importantly, this "memory" is not like the memory which people claim that water has in homeopathy. That isn't memory, it's wishful thinking). This phenomenon with water is called the **Mpemba Effect**, named after the Tanzanian schoolboy who discovered it. It's actually not completely agreed upon what is the cause of this effect.
 
 That was a lot! We’re going to look at something a bit different on the next page before returning to the study of these bifurcations.
+
+## Animated versions
+
+![Animation](/images/part3d/anim_001.gif)
+
