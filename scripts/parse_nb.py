@@ -152,6 +152,103 @@ def _unwrap_text_only_math(match: "re.Match[str]") -> str:
     return re.sub(r'\s+', ' ', unwrapped).strip()
 
 
+_LIST_MARKER_RE = re.compile(r'^(\s*)([-*+]|\d+[.)])\s')
+
+
+def _unindent_orphan_lists(s: str) -> str:
+    """Strip leading whitespace from list-item lines that don't sit under
+    a parent list item. This prevents Markdown from treating
+    Mathematica-pretty-printed lists (indented by \\t) as code blocks.
+
+    An "orphan" block is a contiguous run of indented list-item lines
+    where the preceding non-blank line is not itself a list item. For
+    each such block we subtract the minimum indent from every line in
+    the block so relative nesting within the block is preserved.
+    """
+    lines = s.split('\n')
+    out: list[str] = []
+    i = 0
+    n = len(lines)
+
+    def list_match(ln: str):
+        return _LIST_MARKER_RE.match(ln)
+
+    while i < n:
+        ln = lines[i]
+        m = list_match(ln)
+        if m and m.group(1):  # list item with leading whitespace
+            # Check prior non-blank line context.
+            prev_nonblank = None
+            for j in range(len(out) - 1, -1, -1):
+                if out[j].strip():
+                    prev_nonblank = out[j]
+                    break
+            prev_is_list = prev_nonblank is not None and list_match(prev_nonblank) is not None
+            if not prev_is_list:
+                # Collect the orphan block — consecutive list lines &
+                # blank lines between them.
+                block_start = i
+                block_indents: list[int] = []
+                j = i
+                while j < n:
+                    mj = list_match(lines[j])
+                    if mj:
+                        block_indents.append(len(mj.group(1)))
+                        j += 1
+                        continue
+                    if not lines[j].strip():
+                        # Peek: is the next non-blank line also an indented list?
+                        k = j + 1
+                        while k < n and not lines[k].strip():
+                            k += 1
+                        if k < n and list_match(lines[k]):
+                            j = k
+                            continue
+                    break
+                if block_indents:
+                    min_indent = min(block_indents)
+                    for k in range(block_start, j):
+                        line = lines[k]
+                        if list_match(line) and line[:min_indent].strip() == '':
+                            out.append(line[min_indent:])
+                        else:
+                            out.append(line)
+                    i = j
+                    continue
+        out.append(ln)
+        i += 1
+    return '\n'.join(out)
+
+
+def _unindent_orphan_prose(s: str) -> str:
+    """Strip 4+ leading spaces on prose lines that aren't continuations
+    of a Markdown list. Otherwise they render as an indented code block."""
+    lines = s.split('\n')
+    out: list[str] = []
+    for ln in lines:
+        if _LIST_MARKER_RE.match(ln):
+            out.append(ln)
+            continue
+        # Prose line with 4+ leading spaces?
+        m = re.match(r'^( {4,})(\S.*)$', ln)
+        if not m:
+            out.append(ln)
+            continue
+        # Look back for context.
+        prev_nonblank = None
+        for j in range(len(out) - 1, -1, -1):
+            if out[j].strip():
+                prev_nonblank = out[j]
+                break
+        prev_is_list = prev_nonblank is not None and _LIST_MARKER_RE.match(prev_nonblank)
+        if prev_is_list:
+            # Keep indent — genuine list continuation.
+            out.append(ln)
+        else:
+            out.append(m.group(2))
+    return '\n'.join(out)
+
+
 def clean_text_whitespace(s: str) -> str:
     """Collapse runs of whitespace in plain prose (not math)."""
     # Preserve leading whitespace on each line (for list-item continuation
@@ -182,6 +279,21 @@ def clean_text_whitespace(s: str) -> str:
     # Convert indented sub-bullet chars (1+ leading spaces + ∘/◦) to sub-item
     s = re.sub(r'(?m)^ +[∘◦]\s*', '    - ', s)
     s = re.sub(r'(?m)^ +•\s*', '    - ', s)
+
+    # Un-indent "orphan" list-item blocks that aren't nested under a real
+    # parent list. Mathematica authors often use \t to pretty-print lists
+    # inside plain Text cells; after \t → 4-space conversion these would
+    # render as Markdown code blocks. We look at each indented list-item
+    # line and strip its leading whitespace unless the previous non-blank
+    # line is itself a list item (genuine nesting).
+    s = _unindent_orphan_lists(s)
+    # Same for orphan indented prose (e.g. tab-pretty-printed ToC lines):
+    # a 4+ space indent on a prose line whose previous non-blank line is
+    # not a list item would render as a Markdown code block. Strip it.
+    s = _unindent_orphan_prose(s)
+    # Drop trailing-whitespace-only lines (e.g. "    \n") left after
+    # un-indenting — they'd otherwise linger as visible blank indented lines.
+    s = re.sub(r'(?m)^[ \t]+$', '', s)
     return s.strip()
 
 

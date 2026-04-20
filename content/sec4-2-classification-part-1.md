@@ -28,7 +28,7 @@ $$
 In this section we will look at the more general case and ask about how we can classify the different types of behaviour.
 
 To solve the system in general, we will make use of the fact that the systems are linear, which means that if we find any two solutions, they can be added together in any linear combination and they will still be a solution. Because this is a first order equation in two variables, we need to find precisely two linearly independent solutions and we are done.
- 
+
 Let us make a guess solution (which we call an ansatz). Let's see if we can find solutions of the form:
 
 $$
