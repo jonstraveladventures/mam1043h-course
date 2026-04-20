@@ -15,7 +15,7 @@ $$
 \dot{x}=f\left(x\right)
 $$
 
-fixed point x = x^{*}
+fixed point $x$ = $x^{*}$
 
 Is there a way that we can tell whether it's stable or unstable?
 
@@ -117,7 +117,7 @@ We have now proved what we said previously. We said back then that:
 
 Given a differential equation:
 
-\dot{x}=f\left(x\right)CellChangeTimes->3.834915033379717*^93.8349157293211613`*^93.8349354417771397`*^93.835064676070623*^93.852629350484518*^9 8044d5924cfb
+$\dot{x}=f\left(x\right)$
 
 - The fixed points, labeled $x^{*},$ are given by $f\left(x^{*}\right)=0$. 
 - The particle will be moving to the right whenever $f\left(x\right)>0$ and moving to the left whenever $f\left(x\right)<0$. 

@@ -131,7 +131,6 @@ Which is a perfectly good direction field, but we notice that the gradients of t
 
 Soon we will move on to section 3 and explore bifurcations, which is really about the way the fixed points can themselves behave. First of all, let’s have a quick recap of phase spaces and phase portraits.
 
-
 ## Animated versions
 
 ![Animation](/images/part2g/anim_001.gif)

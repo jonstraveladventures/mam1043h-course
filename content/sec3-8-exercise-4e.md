@@ -5,7 +5,7 @@ math: true
 ---
 ## Exercises 3.4.e
 
-For: \dot{x}=r \text{ ln }\left(x\right)+x-1EquationCellChangeTimes-> c3470641be9c
+$For: \dot{x}=r \text{ ln }\left(x\right)+x-1$
 
 - i) Sketch the different vector field types that appear when you vary $r$.
 

@@ -5,7 +5,7 @@ math: true
 ---
 ## Exercises 3.1.a
 
-For: \dot{x}=r+x-\text{ log }\left(1+x\right)EquationCellChangeTimes-> c3470641be9c
+$For: \dot{x}=r+x-\text{ log }\left(1+x\right)$
 
 - i) Sketch the different vector field types that appear when you vary $r$. We’re actually going to do this first the hard way, then the easier way.
 

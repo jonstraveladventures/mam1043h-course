@@ -163,7 +163,7 @@ What do all of these things have in common?
 
 - They are all about how something changes in time.
 
-- They are all about the interaction, either with itself, or in some environment. Let’s look  at that list again:
+- They are all about the interaction, either with itself, or in some environment. Let’s look at that list again:
 
 - A planet moving around a star: The position of the planet is changing with time, the planet is interacting with the star.
 - A population of rhinos interacting with a population of poachers: The number of rhinos and poachers are changing over time. The rhinos and poachers are interacting with each other, but the rhinos also depend on the amount of food around, and many other factors. The number of poachers depends on economic factors, family dynamics, police enforcement.

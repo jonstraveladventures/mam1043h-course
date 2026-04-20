@@ -5,7 +5,7 @@ math: true
 ---
 ## Exercises 3.1.a
 
-For: \dot{x}=2+r x +x^{2}EquationCellChangeTimes-> c3470641be9c
+$For: \dot{x}=2+r x +x^{2}$
 
 - i) Sketch the different vector field types that appear when you vary $r$. We’re actually going to do this first the hard way, then the easier way.
 
@@ -39,7 +39,7 @@ Two critical points, at $r = \pm{}2\sqrt{2}$, and these occur at: $x=\frac{1}{2}
 
 We can actually rewrite the equation very simply to get it into Normal form. Let’s first of all complete the square:
 
-\dot{x}=2+r x +x^{2}\longrightarrow{}{\left(x+\frac{r}{2}\right)}^{2}-\frac{r^{2}}{4}+2EquationCellChangeTimes-> fe2f14ac645d
+$ \dot{x}=2+r x +x^{2}\longrightarrow{}{\left(x+\frac{r}{2}\right)}^{2}-\frac{r^{2}}{4}+2$
 
 Now redefine $X=x+\frac{r}{2}$:
 

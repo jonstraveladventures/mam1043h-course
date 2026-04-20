@@ -165,15 +165,15 @@ where you can see that there is a single line which is simply scaled which here 
 
 **Let’s summarise a bit here -** What are the options for the eigenvalues:
 
-- Two eigenvalues, both real: Two vectors along which the flow doesn’t  change direction. If both correspond to negative eigenvectors then the origin is stable, else it’s unstable.
+- Two eigenvalues, both real: Two vectors along which the flow doesn’t change direction. If both correspond to negative eigenvectors then the origin is stable, else it’s unstable.
 
-- Two eigenvalues, both complex: They will be complex conjugate pairs and this will lead to  rotating solutions in the  $\left(x,y\right)$ plane. If there is a real part then it will either decay in (negative real part) or explode out (positive real part). The frequency and direction of the rotation is dictated by the imaginary part.
+- Two eigenvalues, both complex: They will be complex conjugate pairs and this will lead to rotating solutions in the $\left(x,y\right)$ plane. If there is a real part then it will either decay in (negative real part) or explode out (positive real part). The frequency and direction of the rotation is dictated by the imaginary part.
 
-- Only a single eigenvalue: Either corresponding to an all vectors being eigenvectors in which case all solutions come in along lines directly to or away from the origin, or there is a single eigenvector and all other lines find themselves getting closer and closer to this  line (see the figure above).
+- Only a single eigenvalue: Either corresponding to an all vectors being eigenvectors in which case all solutions come in along lines directly to or away from the origin, or there is a single eigenvector and all other lines find themselves getting closer and closer to this line (see the figure above).
 
 - There is one other option which is that the matrix A is zero, in which case all points are fixed points.
 
-- OK, and one other where we have a line of fixed points. This is the case where Δ=0 but τ≠0, for  instance $A=\left(\begin{matrix} 1 & 1 \\ 1 & 1 \end{matrix}\right) $. In which case we get a single differential equation:
+- OK, and one other where we have a line of fixed points. This is the case where Δ=0 but τ≠0, for instance $A=\left(\begin{matrix} 1 & 1 \\ 1 & 1 \end{matrix}\right) $. In which case we get a single differential equation:
 
 ![Figure 10](/images/part4c/output_010.png)
 

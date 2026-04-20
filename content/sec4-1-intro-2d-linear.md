@@ -245,7 +245,6 @@ Now try and plot the trajectories for some of these different initial conditions
 
 You will explore the fixed point structure of this system in the Exercises for part 4.
 
-
 ## Animated versions
 
 ![Animation](/images/part4a/anim_001.gif)

@@ -157,7 +157,6 @@ $$
 
 and put this equation into normal form via a change of variables.
 
-
 ## Animated versions
 
 ![Animation](/images/part3b/anim_001.gif)

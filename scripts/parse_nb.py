@@ -369,19 +369,19 @@ def cell_to_md(cell: list, image_counter: list[int], images_dir: str,
 
     # ── List items ──────────────────────────────────────────────────────────
     if cell_type in ("Item", "ItemParagraph", "Item1", "Item1Exercise"):
-        text = extract_text(content)
+        text = clean_text_whitespace(extract_text(content)).strip()
         return f"- {text}" if text else None
 
     if cell_type in ("Subitem", "Subitem1", "Item2", "Item2Exercise"):
-        text = extract_text(content)
+        text = clean_text_whitespace(extract_text(content)).strip()
         return f"    - {text}" if text else None
 
     if cell_type in ("Subsubitem", "Subsubitem1", "Item3"):
-        text = extract_text(content)
+        text = clean_text_whitespace(extract_text(content)).strip()
         return f"        - {text}" if text else None
 
     if cell_type in ("ItemNumbered",):
-        text = extract_text(content)
+        text = clean_text_whitespace(extract_text(content)).strip()
         return f"1. {text}" if text else None
 
     # ── Text cells ──────────────────────────────────────────────────────────
@@ -434,11 +434,44 @@ def extract_text(content) -> str:
         if head == "FormBox":
             return box_to_latex(content)
 
-        # Fallback — join string children
-        return "".join(
-            extract_text(c) for c in content[1:]
-            if not isinstance(c, list) or (c and c[0] not in ("Rule", "RuleDelayed"))
-        )
+        if head == "Cell":
+            # Inline Cell[content, options...] — only process the content,
+            # skip options like CellChangeTimes, FontSize, ExpressionUUID.
+            # Wrap as inline math if content is BoxData.
+            if len(content) < 2:
+                return ""
+            inner = content[1]
+            if isinstance(inner, list) and inner and inner[0] == "BoxData":
+                latex = boxdata_to_latex(inner)
+                return f"${latex}$" if latex.strip() else ""
+            return extract_text(inner)
+
+        if head == "ButtonBox":
+            # ButtonBox[label, options...] — only use label
+            return extract_text(content[1]) if len(content) > 1 else ""
+
+        # Fallback — join string children, but stop at option-looking tokens
+        # (Mathematica "Rule" args, or bare "Symbol->value" sequences that
+        # leak cell metadata like CellChangeTimes, FontSize, ExpressionUUID).
+        _OPT_NAMES = {
+            "CellChangeTimes", "ExpressionUUID", "FontSize", "FontColor",
+            "FontWeight", "FontSlant", "FontVariations", "BaseStyle",
+            "ButtonData", "ButtonNote", "ImageSize", "PlotRange",
+            "CellTags", "CellLabel", "CellDingbat",
+        }
+        parts = []
+        i = 1
+        while i < len(content):
+            c = content[i]
+            if isinstance(c, list) and c and c[0] in ("Rule", "RuleDelayed"):
+                i += 1
+                continue
+            if isinstance(c, str) and c in _OPT_NAMES:
+                # Skip "Name -> value" triple (or until next non-option token)
+                break
+            parts.append(extract_text(c))
+            i += 1
+        return "".join(parts)
 
     return ""
 

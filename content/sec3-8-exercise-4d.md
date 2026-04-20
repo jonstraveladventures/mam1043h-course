@@ -5,7 +5,7 @@ math: true
 ---
 ## Exercises 3.4.e
 
-For: \dot{x}=x \left(r-e^{x}\right)EquationCellChangeTimes-> c3470641be9c
+$For: \dot{x}=x \left(r-e^{x}\right)$
 
 - i) Sketch the different vector field types that appear when you vary $r$.
 

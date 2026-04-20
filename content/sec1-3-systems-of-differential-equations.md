@@ -135,7 +135,6 @@ Hang on a minute. **Why** are we doing this?
 
 Well, it turns out to be really convenient to work with systems of first order equations in general.
 
-
 ## Animated versions
 
 ![Animation](/images/part1d/anim_001.gif)

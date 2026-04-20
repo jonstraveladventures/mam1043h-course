@@ -343,7 +343,6 @@ And unsurprisingly, if the eigenvalues are both positive, everything is going to
 
 Let’s stop there for now and in the next lesson we will look at what happens when we have complex eigenvalues.
 
-
 ## Animated versions
 
 ![Animation](/images/part4b/anim_001.gif)
