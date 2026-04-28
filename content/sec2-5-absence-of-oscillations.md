@@ -7,7 +7,7 @@ math: true
 
 Absence of Oscillations
 
-There are plenty of very simple dynamical systems which oscillate over time. We saw the pendulum earlier, but there are many others. Note however that the pendulum is a second order differential equation (Or two first order order differential equations recall).
+There are plenty of very simple dynamical systems which oscillate over time. We saw the pendulum earlier, but there are many others. Note however that the pendulum is a second order differential equation (Or two first order order differential equations [recall](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1f)).
 
 We can ask whether it’s possible to find a single first order differential equation which has oscillating solutions, again, of the form:
 

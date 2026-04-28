@@ -83,4 +83,4 @@ $$
 
 which is now a differential equation with just two free parameters. See how far you can get in showing that this also has a cusp catastrophe.
 
-There is a nice explanation of this example here but I’d like you to have a go at it yourself first. Have a watch of it, and see if you can understand the behaviour as you change the different parameters. In particular look at around 25 minutes to see the change as you slowly increase the reproductive rate of the population and how an insect outbreak can suddenly occur.
+There is a nice explanation of this example [here](https://www.youtube.com/watch?v=icz56724Txs) but I’d like you to have a go at it yourself first. Have a watch of it, and see if you can understand the behaviour as you change the different parameters. In particular look at around 25 minutes to see the change as you slowly increase the reproductive rate of the population and how an insect outbreak can suddenly occur.

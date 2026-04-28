@@ -73,9 +73,9 @@ Note that this bifurcation type is also sometimes called a **fold bifurcation** 
 
 Note that the fixed points can come together from the left, or right (increasing or decreasing $r$), and meet at any point, but the thing which makes a saddle node bifurcation a saddle node bifurcation is that when you change a parameter you go from two fixed points to zero.
 
-The term *bifurcation* has its origins in the idea of turning into two forks *(**bi**=**two**,**furc**=**fork**, from Latin)*.
+The term *bifurcation* has its origins in the idea of turning into two forks *(**bi**=**two**,* *furc**=**fork**, from Latin)*.
 
-**Now your turn:**Perform the same analysis as above, but this time for the equations:
+**Now your turn:** Perform the same analysis as above, but this time for the equations:
 
 $$
 \dot{x}=r-{\left(x+1\right)}^{2}

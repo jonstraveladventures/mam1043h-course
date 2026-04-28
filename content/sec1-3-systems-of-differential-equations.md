@@ -65,7 +65,7 @@ $$
 x_{n}'\left(t\right)=f_{n}\left(x_{1}\left(t\right),x_{2}\left(t\right),...,x_{n}\left(t\right)\right)
 $$
 
-Where we have *n*variables $x_{1} \text{ to } x_{n}$ and their derivatives are given by *n* functions $f_{1} \text{ to } f_{n} \text{ which are } \text{ functions of } \text{ the variables }$. These are called first order because we have only first derivatives.
+Where we have *n* variables $x_{1} \text{ to } x_{n}$ and their derivatives are given by *n* functions $f_{1} \text{ to } f_{n} \text{ which are } \text{ functions of } \text{ the variables }$. These are called first order because we have only first derivatives.
 
 These variables could be many things. For instance if we were talking about a particle moving around in three dimensions then they might correspond to the coordinates so we would have that $x_{1}$, $x_{2}$, and $x_{3} $are the traditional x, y and z coordinates respectively. Here is a particle moving about in three dimensions with the $x_{i}'s$ changing in time.
 

@@ -9,7 +9,7 @@ Love Affairs
 
 So, this is the last section of the notes, I know, it’s difficult for me too, but it’s only for now! If you carry on next year with applied maths you may find me teaching you Second Year Non-Linear Dynamics, in which case I will be carrying on with the notes then... but for now, let's look at love affairs.
 
-This example is adapted from Strogatz, and is based on a paper of his from 1988.
+This example is adapted from Strogatz, and is based on [a paper of his from 1988](http://ai.stanford.edu/~rajatr/articles/SS_love_dEq.pdf).
 
 This is a tale of two penguins who can be found in Simon’s Town, just down the coast from here. Thando and Marsha are two penguins, and their relationship is... complicated. We will be modeling their love for one another. $T\left(t\right) \text{ measures }$ Thando’s love for Marsha and $M\left(t\right) $measures Marsha’s love for Thando. These variables can be positive (loving) or negative (hating). A nearby mathematically minded penguin named Erd[ODoubleDot]s has come up with a model for the couple’s dynamics. Erd [ODoubleDot]s the penguin claims that an appropriate model for what she has seen is:
 

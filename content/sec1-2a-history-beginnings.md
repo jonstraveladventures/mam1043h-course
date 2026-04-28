@@ -5,13 +5,13 @@ math: true
 ---
 ## Section 1.2(a): The History of Dynamics - The Beginnings of Dynamics
 
-To have dynamics, we need to describe rates of change. We mostly do this using derivatives... and therefore calculus. But we don’t actually need calculus to study dynamical systems. Instead of differential equations, one can use difference equations. See this short important post here.
+To have dynamics, we need to describe rates of change. We mostly do this using derivatives... and therefore calculus. But we don’t actually need calculus to study dynamical systems. Instead of differential equations, one can use difference equations. See this short important post [here](https://www.wolframcloud.com/obj/jon.shock/differenceequations).
 
 Ideas of calculus were already around in Egypt, India and China, but it was formalised in the 17th century by Newton (and Leibniz).
 
 It was at this point that Newton allowed us to start writing down differential equations to describe the world. One of the first things that he wanted to understand was gravity.
 
-The world already had a set of laws, thanks to Kepler, about planetary motion. Those laws were thanks to the observations of Tycho Brahe - the astronomer with the metal nose (he lost the original in a sword fight). Tycho’s sister, Sophia Brahe was instrumental to making these observations.
+The world already had a set of laws, thanks to [Kepler](https://en.wikipedia.org/wiki/Johannes_Kepler), about planetary motion. Those laws were thanks to the observations of [Tycho Brahe](https://en.wikipedia.org/wiki/Tycho_Brahe) - the astronomer with the metal nose (he lost the original in a sword fight). Tycho’s sister, [Sophia Brahe](https://en.wikipedia.org/wiki/Sophia_Brahe) was instrumental to making these observations.
 
 **The first law**: A planet’s orbit around the sun is an ellipse. The sun ’s centre is at one focus of the ellipse.
 
@@ -25,17 +25,17 @@ The world already had a set of laws, thanks to Kepler, about planetary motion. T
 
 ![Figure 3](/images/part1b/output_003.png)
 
-This diagram below shows how well the third law holds in the solar system:
+[This](https://commons.wikimedia.org/wiki/File:Solar_system_orbital_period_vs_semimajor_axis.svg) diagram below shows how well the third law holds in the solar system:
 
-**So, Brahe had studied the movements of the planets and noted down their positions over time with huge detail. Also note that Chinese astronomy was way ahead of its time, with Shen Kuo (\:6c88\:62ec) having made detailed observations of planetary motion in the 11th century. Kepler had made some empirical observations of these positions and come up with his three laws, but nobody knew why these laws held. 
+So, Brahe had studied the movements of the planets and noted down their positions over time with huge detail. Also note that Chinese astronomy was way ahead of its time, with [Shen Kuo](https://en.wikipedia.org/wiki/Shen_Kuo) (\:6c88\:62ec) having made detailed observations of planetary motion in the 11th century. Kepler had made some [empirical](https://dictionary.cambridge.org/dictionary/english/empirical) observations of these positions and come up with his [three laws](https://en.wikipedia.org/wiki/Kepler%27s_laws_of_planetary_motion), but nobody knew why these laws held. 
 
-So, Newton came along with his fancy-pants calculus and wrote down the differential equation thanks to his law of gravitation and laws of motion. By solving them, he proved Kepler’s laws to be true (well, at least in the limit that the sun is much much heavier than the planets). You can find a nice review of this here. Quoting from this page:
+So, Newton came along with his fancy-pants calculus and wrote down the differential equation thanks to his law of gravitation and laws of motion. By solving them, he proved Kepler’s laws to be true (well, at least in the limit that the sun is much much heavier than the planets). You can find a nice review of this [here](https://www.mtholyoke.edu/courses/mdyar/ast223/orbits/orb_lect.html). Quoting from this page:
 
 *Kepler’s Laws are wonderful as a description of the motions of the plan**ets. However, they provide no explanation of why the planets move in this way. Moreover, Kepler’s Third Law only works for planets around the Sun and does not ap**ply to the Moon’s orbit around the Earth or the moons of Jupiter. Isaac Newton (1642-1727) provided a more general explanation of the motions of the planets through the development of Newton ’s Laws of Motion and Newton’s Universal Law of Gravitation.*
 
-The name of this problem is the so-called two-body problem of celestial mechanics. In simple terms it is the problem of two massive objects (stars, planets, etc.) moving around each other through gravitational interactions. 
+The name of this problem is the so-called [two-body problem of celestial mechanics](https://en.wikipedia.org/wiki/Two-body_problem). In simple terms it is the problem of two massive objects (stars, planets, etc.) moving around each other through gravitational interactions. 
 
-In fact, whenever you have two objects moving about each other, both of them move (the heavier one by less than the lighter one). In this demonstration from here you can explore what happens when you change various parameters in the orbits of two objects around each other. The following is just a picture.
+In fact, whenever you have two objects moving about each other, both of them move (the heavier one by less than the lighter one). In this demonstration from [here](https://demonstrations.wolfram.com/TheCelestialTwoBodyProblem/) you can explore what happens when you change various parameters in the orbits of two objects around each other. The following is just a picture.
 
 I said that Newton “solved” the two-body problem. What do we mean by **solved**?
 
@@ -51,7 +51,7 @@ This is an example of a very special solution.
 
 ![Figure 4](/images/part1b/output_004.png)
 
-*If any of you like reading science fiction, then**The Three Body Problem**(\:4e09\:9898\:ff09is a wonderful book by Liu Cixin.*
+*If any of you like reading science fiction, then* *[The Three Body Problem](https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel))* *(\:4e09\:9898\:ff09is a wonderful book by Liu Cixin.*
 
 **So what do we have so far?**
 
@@ -61,7 +61,7 @@ Well, it seems that writing down differential equations can be important to unde
 
 - Sometimes we can't solve these differential equations.
 
-This course will be about******trying to be as lazy as possible****(****but no lazier****)**: getting answers without having to solve the differential equations (though sometimes we will).
+This course will be about **trying to be as lazy as possible (but no lazier)**: getting answers without having to solve the differential equations (though sometimes we will).
 
 ## Animated versions
 

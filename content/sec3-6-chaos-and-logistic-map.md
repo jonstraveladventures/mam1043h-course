@@ -35,7 +35,7 @@ Let’s look at it with, a higher starting population:
 
 We see that starting at 0.8, the population first plummets, then it starts to go up again.
 
-**Exercise:**Try and code this up yourself in Python.
+**Exercise:** Try and code this up yourself in Python.
 
 If we start even higher, then something funky happens:
 
@@ -163,7 +163,7 @@ The strange thing is that within this chaos we see an island of calm, between ar
 
 ![Figure 15](/images/part3e/output_015.png)
 
-**Exercise:**Explore this with Python.
+**Exercise:** Explore this with Python.
 
 What has this got to do with the real world? Well, it turns out that a lot if not most of what is around you is part of a chaotic system!
 
@@ -179,11 +179,11 @@ Mathemafrica: Mandelbrot set.
 
 Have a look at this blog-post:
 
-https://writings.stephenwolfram.com/2019/07/mitchell-feigenbaum-1944-2019-4-66920160910299067185320382/
+[https://writings.stephenwolfram.com/2019/07/mitchell-feigenbaum-1944-2019-4-66920160910299067185320382/](https://writings.stephenwolfram.com/2019/07/mitchell-feigenbaum-1944-2019-4-66920160910299067185320382/)
 
 to learn more about Feigenbaum and his constant.
 
-If you haven’t already done so, take a look at the Veritasium video on this here.
+If you haven’t already done so, take a look at the Veritasium video on this [here](https://www.youtube.com/watch?v=ovJcsL7vyrk&vl=en).
 
 I’m going to leave you with this plot. See if you can figure out what’s going on. The red line is a line of gradient 1 through the origin:
 

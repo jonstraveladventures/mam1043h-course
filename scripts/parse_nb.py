@@ -349,6 +349,11 @@ def clean_text_whitespace(s: str) -> str:
     s = re.sub(r'(?m)^ {2,}([a-z])\)\s+', r'    - \1) ', s)
     # Convert top-level bullet chars: "• item" or "∘ item" → "- item"
     s = re.sub(r'(?m)^[•∘]\s*', '- ', s)
+    # Split inline bullet glyphs that sit between two link/items on the
+    # same line, e.g. "[link1](u)∘[link2](u2)" — these came from authors
+    # who wrote multi-bullet TextData with \[SmallCircle] separators but
+    # without explicit newlines between them.
+    s = re.sub(r'(\))\s*[•∘]\s*(\[)', r'\1\n- \2', s)
     # Convert indented sub-bullet chars (1+ leading spaces + ∘/◦) to sub-item
     s = re.sub(r'(?m)^ +[∘◦]\s*', '    - ', s)
     s = re.sub(r'(?m)^ +•\s*', '    - ', s)
@@ -372,6 +377,20 @@ def clean_text_whitespace(s: str) -> str:
     # Drop trailing-whitespace-only lines (e.g. "    \n") left after
     # un-indenting — they'd otherwise linger as visible blank indented lines.
     s = re.sub(r'(?m)^[ \t]+$', '', s)
+    # Merge / clean up consecutive bold runs. The Wolfram source often
+    # has "<bold>foo</bold><bold>.</bold>" which becomes **foo****.** —
+    # technically valid CommonMark but renders awkwardly across viewers
+    # (and produces literal **** when one of the runs is whitespace-only).
+    # Strip empty bolds first, then iteratively coalesce neighbours.
+    s = re.sub(r'\*\*\*\*', '', s)  # **** → empty
+    prev = None
+    while prev != s:
+        prev = s
+        # **a****b** → **ab**  (no space between)
+        s = re.sub(r'\*\*([^*\n]+?)\*\*\*\*([^*\n]+?)\*\*', r'**\1\2**', s)
+        # **a** **b** → **a b**  (single space between — only when on the
+        # same line; multiple spaces or newlines are left alone)
+        s = re.sub(r'\*\*([^*\n]+?)\*\* \*\*([^*\n]+?)\*\*', r'**\1 \2**', s)
     return s.strip()
 
 
@@ -417,27 +436,86 @@ def textdata_to_md(items) -> str:
             if head == "Cell":
                 # Inline Cell — usually BoxData math
                 parts.append(inline_cell_to_md(item))
+            elif head == "RowBox":
+                # RowBox children are stored as a single nested list:
+                # ["RowBox", [child1, child2, ...]].  Recurse into the
+                # children list directly so each element renders in turn.
+                if len(item) > 1 and isinstance(item[1], list):
+                    parts.append(textdata_to_md(item[1]))
+                else:
+                    parts.append(textdata_to_md(item[1:]))
             elif head == "StyleBox":
                 inner_text = textdata_to_md(item[1:2])
-                # Check for font options
-                opts = item[2:] if len(item) > 2 else []
-                bold = any(
-                    (isinstance(o, list) and o == ["Rule", "FontWeight", "Bold"])
-                    or o == "Bold"
-                    for o in opts
-                )
-                italic = any(
-                    (isinstance(o, list) and o == ["Rule", "FontSlant", "Italic"])
-                    or o == "Italic"
-                    for o in opts
-                )
-                if bold:
-                    inner_text = f"**{inner_text.strip()}**"
-                elif italic:
-                    inner_text = f"*{inner_text.strip()}*"
-                parts.append(inner_text)
+                # Check for font options. Note the parser emits a flat
+                # token sequence including bare "Bold" or "Italic" strings
+                # and "FontWeight" / "FontSlant" rule pairs.
+                opts_flat = item[2:] if len(item) > 2 else []
+                # Parser emits Rules as flat tokens, e.g.
+                #   ["FontWeight", "->", "Bold"], so a bare "Bold" string
+                # appearing anywhere in opts means bold weight applies.
+                bold = "Bold" in opts_flat
+                italic = "Italic" in opts_flat
+                stripped = inner_text.strip()
+                if not stripped:
+                    # Empty / whitespace-only StyleBox — preserve the
+                    # whitespace but emit no bold/italic markers (avoids
+                    # leftover **** artefacts in the output).
+                    parts.append(inner_text)
+                elif bold or italic:
+                    marker = "**" if bold else "*"
+                    leading = inner_text[: len(inner_text) - len(inner_text.lstrip())]
+                    trailing = inner_text[len(inner_text.rstrip()) :]
+                    parts.append(f"{leading}{marker}{stripped}{marker}{trailing}")
+                else:
+                    parts.append(inner_text)
             elif head == "ButtonBox":
-                parts.append(textdata_to_md(item[1:2]))
+                # Hyperlink: extract URL from ButtonData -> {URL[...], None}
+                # or from ButtonNote -> "<url>" as fallback. Wolfram wraps
+                # long URLs at col 80 with a backslash-newline that the
+                # tokeniser turns into a literal space — strip those.
+                link_text = textdata_to_md([item[1]]) if len(item) > 1 else ""
+                # Drop linebreak artefacts inside the visible text, but
+                # preserve leading/trailing whitespace so the link sits
+                # cleanly between surrounding prose.
+                link_text = link_text.replace("\\[LineSeparator]", "").replace(
+                    "\n", " "
+                )
+                stripped_text = link_text.strip()
+                leading = link_text[: len(link_text) - len(link_text.lstrip())]
+                trailing = link_text[len(link_text.rstrip()) :]
+                url: str | None = None
+                # Walk the flat option tail looking for ButtonData -> {...}.
+                tail = item[2:]
+                for i, tok in enumerate(tail):
+                    if tok == "ButtonData" and i + 2 < len(tail):
+                        data = tail[i + 2]
+                        if isinstance(data, list) and data:
+                            inner = data[0]
+                            if (
+                                isinstance(inner, list)
+                                and len(inner) >= 2
+                                and inner[0] == "URL"
+                                and isinstance(inner[1], str)
+                            ):
+                                url = inner[1]
+                                break
+                if url is None:
+                    for i, tok in enumerate(tail):
+                        if tok == "ButtonNote" and i + 2 < len(tail):
+                            note = tail[i + 2]
+                            if isinstance(note, str) and (
+                                note.startswith("http://")
+                                or note.startswith("https://")
+                            ):
+                                url = note
+                                break
+                if url:
+                    url = url.replace(" ", "").replace("\n", "")
+                if url and stripped_text:
+                    parts.append(f"{leading}[{stripped_text}]({url}){trailing}")
+                elif stripped_text:
+                    parts.append(link_text)
+                # else: empty button — drop entirely
             else:
                 # Unknown — try to extract string content recursively
                 parts.append(textdata_to_md(item[1:]))
@@ -447,13 +525,36 @@ def textdata_to_md(items) -> str:
     return "".join(parts)
 
 
+def _find_buttonbox(node) -> list | None:
+    """Locate the first ButtonBox node anywhere inside a tree.  Returns
+    the ButtonBox list (head + tail) or None."""
+    if isinstance(node, list):
+        if node and node[0] == "ButtonBox":
+            return node
+        for c in node:
+            r = _find_buttonbox(c)
+            if r is not None:
+                return r
+    return None
+
+
 def inline_cell_to_md(cell_node: list) -> str:
-    """Convert an inline Cell[BoxData[...], ...] to $...$."""
-    # cell_node = ["Cell", content, cell_type, ...]
+    """Convert an inline Cell[BoxData[...], ...] to $...$.
+
+    Special case: Wolfram authors frequently wrap hyperlinks in
+    Cell[BoxData[FormBox[ButtonBox[…], TraditionalForm]]].  When the
+    BoxData contains a ButtonBox we render it as a Markdown link via
+    textdata_to_md instead of inline math (which would drop the URL).
+    """
     if len(cell_node) < 2:
         return ""
     content = cell_node[1]
     if isinstance(content, list) and content and content[0] == "BoxData":
+        bb = _find_buttonbox(content)
+        if bb is not None:
+            rendered = textdata_to_md([bb])
+            if rendered.strip():
+                return rendered
         latex = boxdata_to_latex(content)
         if not latex.strip():
             return ""

@@ -47,7 +47,7 @@ Now comes the fun part. We can now plot this position in a two dimensional plane
 
 So that is a single moment in time. As we roll time forward - ie. starting at that position in phase space/that initial angular position and velocity. It's going to trace out a path in the phase space, which might look something like this:
 
-Click here to see it visually!
+Click [here](https://www.wolframcloud.com/obj/jon.shock/MAM10434bpic1) to see it visually!
 
 On the left we see the path taken through phase space. At any one time the pendulum position is given by a single point in the phase space corresponding to a single position, and angular velocity. As we roll time forward, we move to different points in phase space. There are a few things to note:
 
@@ -57,7 +57,7 @@ On the left we see the path taken through phase space. At any one time the pendu
 
 This was a very particular starting position in phase space. Let ’s look at another:
 
-Click here to see it visually!
+Click [here](https://www.wolframcloud.com/obj/jon.shock/MAM10434bpic2) to see it visually!
 
 This time we are starting with a slightly higher angular velocity (of -1.4, rather than -1) which is enough to take us slightly over the horizontal.
 
@@ -125,11 +125,11 @@ $$
 x_{3}'\left(t\right)=1
 $$
 
-A system which has explicit time-dependence is called a **non-autonomous system****(**or simply time-dependent**).**In general we can take an $n^{\text{ th }}$order non-autonomous differential equation and convert it into a system of (n+1) first order, autonomous (not explicitly depending on time) differential equations, as we have done above.
+A system which has explicit time-dependence is called a **non-autonomous system (**or simply time-dependent**).** In general we can take an $n^{\text{ th }}$order non-autonomous differential equation and convert it into a system of (n+1) first order, autonomous (not explicitly depending on time) differential equations, as we have done above.
 
 There’s something rather interesting about a forced system like this. Let’s see what happens when we change the initial conditions. Here we take an example where F = 0.5, k = 0.5 and b = 1.5 and solve it with different values of $x \left(0\right)$ and $x'\left(0\right)$.
 
-**Note importantly, you are****NOT****expected to be able to solve these equations within this course. This is an example to show you what a forcing term does for you.**
+**Note importantly, you are NOT expected to be able to solve these equations within this course. This is an example to show you what a forcing term does for you.**
 
 ![Figure 3](/images/part1e/output_003.png)
 

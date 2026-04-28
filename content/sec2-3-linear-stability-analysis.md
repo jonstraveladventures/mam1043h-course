@@ -7,7 +7,7 @@ math: true
 
 Linear Stability Analysis
 
-If you haven't come across Taylor Polynomials before, look at this post I wrote for my first year pure maths class. Look at the posts before and after at the same link for more about them.
+If you haven't come across Taylor Polynomials before, look [at this post](http://www.mathemafrica.org/?p=11192) I wrote for my first year pure maths class. Look at the posts before and after at the same link for more about them.
 
 OK, we’ve got some first order autonomous differential equation:
 

@@ -43,7 +43,7 @@ $$
 
 The terms on the right are either of zeroth order in the $x_{i}$ or first order. There are no terms with for instance ${x_{1}}^{2}$ or $\left(x_{1}. x_{2}\right)$ or $\text{ sin }\left(x\right)$ or the like. If there are constant terms (as in the 5, in equation 0.4 above), then these are known as inhomogeneous. If every term is precisely of first order in the $x_{i}$ then it is a homogenous equation.
 
-It turns out that systems of linear first order differential equations are always possible to solve. The most complex behaviour however tends to happen when we have non-linear differential equations - ie. where the $f_{i}$ are anything but linear.
+It turns out that [systems of linear first order differential equations](https://en.wikipedia.org/wiki/Linear_dynamical_system) are always possible to solve. The most complex behaviour however tends to happen when we have non-linear differential equations - ie. where the $f_{i}$ are anything but linear.
 
 That being said, we are going to be able to take non-linear systems and discover certain properties of them by approximating them in clever ways as linear systems.
 

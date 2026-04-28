@@ -39,7 +39,7 @@ $$
 
 Think of our particle on a line, and this just tells us that the velocity along the line at any one point is given by the sin of that point’s position.
 
-It is actually possible to solve this, but it is a pain... and we can be lazy. I’ll write out the solution, but******you don’t need to know this**!!
+It is actually possible to solve this, but it is a pain... and we can be lazy. I’ll write out the solution, but **you don’t need to know this**!!
 
 $$
 x=2 {\text{ cot }}^{-1}\left(e^{-t}\text{ cot }\left(\frac{x_{0}}{2}\right)\right)+2\pi{} n\left(x_{0}\right)
@@ -59,7 +59,7 @@ The first thing that we’re going to do is to plot $\dot{x} $against $x$. Well,
 
 ![Figure 1](/images/part2a/output_001.png)
 
-**Well****what does this mean****?**
+**Well what does this mean?**
 
 - $\dot{x}$ tells us how fast we are moving along the line, for a given $x$ (the velocity). If we want to ask how fast we are going at, say the position $x=2$, we just read off the value of $\dot{x}$:
 
@@ -103,7 +103,7 @@ We edge ever close to $x=\pi{}$ but the closer we get, the slower we get and we.
 
 This same thing happens when starting at any point we want. There are certain points that you will always move away from, and certain points that you will always move towards (but never arrive at). The points that we move away from are called **unstable fixed points**, and those that you move towards are called **stable fixed points**.
 
-**Stability****:** The idea that small shakes or perturbations don’t cause large changes. If we start a particle/flow exactly on a fixed point, it **never moves**. 
+**Stability:** The idea that small shakes or perturbations don’t cause large changes. If we start a particle/flow exactly on a fixed point, it **never moves**. 
 
 If we perturb the flow and it moves away from a fixed point then it is an unstable fixed point and if it moves back towards it then it is a stable fixed point.
 
@@ -121,9 +121,9 @@ Note that a system like a ball on a hill is not the same as our one-dimensional 
 
 We can label the stable and unstable fixed points separately:
 
-- A solid black disk at a **stable****fixed point**.
+- A solid black disk at a **stable fixed point**.
 
-- An open circle at the **unstable****fixed point**.
+- An open circle at the **unstable fixed point**.
 
 ![Figure 10](/images/part2a/output_010.png)
 

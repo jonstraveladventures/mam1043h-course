@@ -121,13 +121,13 @@ OK, so we’ve looked at **complex solutions**, and basically have completely cl
 
 For **real solutions** we have also looked at whether you have both eigenvalues positive, or both negative or one of each.
 
-There is a third possibility, which itself has two subclasses. You can have both eigenvalues being the same. There are **two ways** that this can happen. Clearly this can never happen if you have complex eigenvalues as these come in complex conjugate pairs and will always be different. So, we are talking here about a single real eigenvalue. This will happen when ${\tau{}}^{2}=4\Delta{}$ and so the discriminant vanishes. We can write this in terms of the matrix **A**as:
+There is a third possibility, which itself has two subclasses. You can have both eigenvalues being the same. There are **two ways** that this can happen. Clearly this can never happen if you have complex eigenvalues as these come in complex conjugate pairs and will always be different. So, we are talking here about a single real eigenvalue. This will happen when ${\tau{}}^{2}=4\Delta{}$ and so the discriminant vanishes. We can write this in terms of the matrix **A** as:
 
 $$
 A=\left(\begin{matrix} a & b \\ c & d \end{matrix}\right) \text{ with } {\left(a+d\right)}^{2}=4\left(a d-b c\right)
 $$
 
-One way that this can happen if $b=c=0$ and $a=d$. Then you can write the matrix **A**directly in terms of the eigenvalues:
+One way that this can happen if $b=c=0$ and $a=d$. Then you can write the matrix **A** directly in terms of the eigenvalues:
 
 $$
 A=\left(\begin{matrix} \lambda{} & 0 \\ 0 & \lambda{} \end{matrix}\right)

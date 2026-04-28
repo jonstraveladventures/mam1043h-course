@@ -7,20 +7,18 @@ math: true
 
 If you find any mistakes, or have comments on the notes, please message me at jon.shock@gmail.com.
 
-The textbook that I will be following is: Nonlinear Dynamics and Chaos, by Steven Strogatz.
+The textbook that I will be following is: [Nonlinear Dynamics and Chaos](http://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering), by Steven Strogatz.
 
 You do not need to get it. I will aim for this all to be self-contained. However, it is a beautifully written book, and almost certainly
 
 the best introduction to the subject.
 
-Steven Strogatz actually has some of the material that we will be covering on Youtube (Note that we will only really cover the first two his lectures):here.
-
-He has in the past tweeted to this link which has some Python code for some of the examples in the book.
+Steven Strogatz actually has some of the material that we will be covering on Youtube (Note that we will only really cover the first two his lectures): [here.](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V)He has in the past tweeted to [this link](https://github.com/Llewelyn62/Non-linear-dynamics-Strogatz) which has some Python code for some of the examples in the book.
 
 Here are some more links to online courses which you may want to browse.
 
-- Complexity Explorer course on intro to dynamical systems and chaos
-- Complexity Explorer course on introduction-to-differential-equations
+- [Complexity Explorer course on intro to dynamical systems and chaos](https://www.complexityexplorer.org/courses/120-introduction-to-dynamical-systems-and-chaos)
+- [Complexity Explorer course on introduction-to-differential-equations](https://www.complexityexplorer.org/courses/31-introduction-to-differential-equations/segments/3495?summary)
 
 Please note, that I will often put in links to Wikipedia articles. One has to be careful about how accurate Wikipedia pages are, and in general if you are writing a scientific research paper, Wikipedia articles are not good to reference. However, for an educational set of notes like this, where I think that it will add useful content, I will be doing so. Wikipedia articles should be read with a critical hat on, and if you want to dig further, look at the references in the articles themselves.
 
@@ -40,53 +38,53 @@ The Course Content:
 Section 1: Introduction (Strogatz chapter 1)
 
 - 1.1 Overview of the course (what you're reading now)
-- 1.2 a) The history of dynamics - The beginnings of dynamics
-- 1.2 b) The history of dynamics - Poincare and chaos
+- 1.2 a) [The history of dynamics - The beginnings of dynamics](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1b)
+- 1.2 b) [The history of dynamics - Poincare and chaos](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1c)
 
-Aside: Difference equations
+Aside: [Difference equations](https://www.wolframcloud.com/obj/jon.shock/differenceequations)
 
-- 1.3 Systems of differential equations
-- 1.4 Phase space
-- 1.5 The spectrum of systems of differential equations
+- 1.3 [Systems of differential equations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1d)
+- 1.4 [Phase space](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1e)
+- 1.5 [The spectrum of systems of differential equations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1f)
 
-- 1.6 Exercises for part 1
+- 1.6 [Exercises for part 1](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1exercises)
 
 Section 2: Flows on the line (Strogatz chapter 2)
 
-- 2.1 Fixed points and trajectories
-- 2.2 Fixed Points and their stability
-- 2.3 Linear stability analysis
-- 2.4 Existence and uniqueness of solutions
-- 2.5 Absence of oscillations
-- 2.6 Potentials
-- 2.7 a) Solving equations on the computer
+- 2.1 [Fixed points and trajectories](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2a)
+- 2.2 [Fixed Points and their stability](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2b)
+- 2.3 [Linear stability analysis](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2c)
+- 2.4 [Existence and uniqueness of solutions](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2d)
+- 2.5 [Absence of oscillations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2e)
+- 2.6 [Potentials](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2f)
+- 2.7 a) [Solving equations on the computer](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2g)
 
-- 2.7 b) Back to basics: A summary of phase spaces and phase portraits
-- 2.8 Exercises for part 2
+- 2.7 b) [Back to basics: A summary of phase spaces and phase portraits](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2h)
+- 2.8 [Exercises for part 2](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2exercises)
 
 
 Section 3: Bifurcations (Strogatz chapter 3)
 
-- 3.1 and 3.2 Introduction and saddle-node bifurcations
-- 3.3 Transcritical bifurcations
-- 3.4 Pitchfork bifurcations
-- 3.5 Combinations of bifurcations
-- 3.6 Chaos and the logistic map
-- 3.7 a) Imperfect bifurcations and catastrophes
+- 3.1 and 3.2 [Introduction and saddle-node bifurcations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3a)
+- 3.3 [Transcritical bifurcations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3b)
+- 3.4 [Pitchfork bifurcations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3c)
+- 3.5 [Combinations of bifurcations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3d)
+- 3.6 [Chaos and the logistic map](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3e)
+- 3.7 a) [Imperfect bifurcations and catastrophes](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3f)
 
-- 3.7 b) Imperfect bifurcations and catastrophes part 2
-- 3.8 Exercises for part 3
+- 3.7 b) [Imperfect bifurcations and catastrophes part 2](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3fii)
+- 3.8 [Exercises for part 3](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises)
 
 
 Section 4: Linear systems in two dimensions (Strogatz chapter 5)
 
-- 4.1 Introduction to linear systems in two dimensions
-- 4.2 Classification of linear systems and their origin part 1
+- 4.1 [Introduction to linear systems in two dimensions](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4a)
+- 4.2 [Classification of linear systems and their origin part 1](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4b)
 
-- 4.3 Classification of linear systems and their origin part 2
-- 4.4 Application: Love affairs
+- 4.3 [Classification of linear systems and their origin part 2](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4c)
+- 4.4 [Application: Love affairs](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4d)
 
-- 4.5 Exercises for part 4
+- 4.5 [Exercises for part 4](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4exercises)
 
 ## Chapter 1: Introduction
 
@@ -99,7 +97,7 @@ The scientific method often goes something like this:
 5. If the predictions turn out to be true, make some more until you break your model.
 6. When the predictions turn out not to be true, change your model until it matches the world.
 
-This way you are slowly but surely moving towards a more and more accurate picture of the world. There are a number of disclaimers to all of this. One is that you don't want to keep making your model of the world more and more complicated (see the epicyclic model of the solar system). You want it to be as simple as possible while capturing everything that you observe - ie. as simple as possible, but no simpler. You may ask why we want to break your model. Well, this is due to the statement at the beginning of this chapter from George Box. If we want to find out where our model is wrong, the best way to do this is to find out where it breaks.
+This way you are slowly but surely moving towards a more and more accurate picture of the world. There are a number of disclaimers to all of this. One is that you don't want to keep making your model of the world more and more complicated (see the [epicyclic model of the solar system](https://en.wikipedia.org/wiki/Deferent_and_epicycle)). You want it to be as simple as possible while capturing everything that you observe - ie. as simple as possible, but no simpler. You may ask why we want to break your model. Well, this is due to the statement at the beginning of this chapter from George Box. If we want to find out where our model is wrong, the best way to do this is to find out where it breaks.
 
  So, what is the type of mathematics that you might want to use to describe physical reality? Well, in the first semester you saw a number of different methods that can be used:
 
@@ -116,7 +114,7 @@ $$
 \frac{d P\left(t\right)}{\text{ dt }}=k P\left(t\right)
 $$
 
-This equation is related to population growth and says that the rate of change of a population $P$ with time is proportional to the population that you have at that time (the more people you have, the faster you can produce more people). $k$****is a constant known as the growth rate. I’ve written a long blog post about this here.
+This equation is related to population growth and says that the rate of change of a population $P$ with time is proportional to the population that you have at that time (the more people you have, the faster you can produce more people). $k$ is a constant known as the growth rate. I’ve written a long blog post about this [here](http://www.mathemafrica.org/?p=11450).
 
 1. The logistic equation:
 
@@ -132,11 +130,11 @@ $$
 \frac{d^{2} \theta{}\left(t\right)}{{\text{ dt }}^{2}}=- \frac{g}{l}\text{ sin }\left(\theta{}\left(t\right)\right)
 $$
 
-This equation describes the swinging of a pendulum and relates the acceleration of the angle to the angle itself. $g$****is the strength of gravity and $l^{ } $is the length of the pendulum arm. This says that (at least for angles less than horizontal) the rate of change of the angular velocity is related to how far from the lowest position the pendulum is. Here is a little animation that comes from solving this equation. You do not need to know how this code works.
+This equation describes the swinging of a pendulum and relates the acceleration of the angle to the angle itself. $g$ is the strength of gravity and $l^{ } $is the length of the pendulum arm. This says that (at least for angles less than horizontal) the rate of change of the angular velocity is related to how far from the lowest position the pendulum is. Here is a little animation that comes from solving this equation. You do not need to know how this code works.
 
 ![Pendulum animation](/images/part1a/anim_001.gif)
 
-All of these differential equations are in terms of time, but a differential equation doesn't have to be. However, in this course, we will be talking about time...and we'll see why. The key is in the word **dynamics****.**
+All of these differential equations are in terms of time, but a differential equation doesn't have to be. However, in this course, we will be talking about time...and we'll see why. The key is in the word **dynamics.**
 
 If you’re given a differential equation describing some complicated system, like populations of rabbits and wolves, or planets moving around each other, or neurons firing in the brain, we very often can figure out some behavioural traits without solving the equation. This 2nd half of MAM1043H is about solving these so-called dynamical systems. Systems of interacting elements (things) which are described by differential equations. We will see lots along the way, but the types of things that we might be interested in are:
 
@@ -191,7 +189,7 @@ Now try and write down some dynamical systems of your own... ie. interacting thi
 
 You may ask the question “What is a system which is not dynamical”. Well, the definition of system, is one from Wikipedia (though many dictionary definitions are similar):
 
-**“****A system is a group of interacting or interrelated elements that act according to a set of rules to form a unified whole****”**
+**“A system is a group of interacting or interrelated elements that act according to a set of rules to form a unified whole”**
 
 So, a set of equations which are connected, like:
 
@@ -199,4 +197,4 @@ $$
 x=4y-3
 $$
 
-Would be a system of equations, because the variables $x$ and $y$ which would here correspond to the **elements** of the system, interact via a set of rules. The unified whole is just the set **{**x , y**}** which isn’t very interesting here. Most of the physical systems (collection of interacting elements) that you can think of will already be dynamical, because most things around us which interact **do******change with time.
+Would be a system of equations, because the variables $x$ and $y$ which would here correspond to the **elements** of the system, interact via a set of rules. The unified whole is just the set **{**x , y**}** which isn’t very interesting here. Most of the physical systems (collection of interacting elements) that you can think of will already be dynamical, because most things around us which interact **do** change with time.

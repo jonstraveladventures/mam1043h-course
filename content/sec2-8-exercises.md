@@ -25,9 +25,9 @@ Note that you want to get the characteristic trajectories general behaviour righ
 
     - $\dot{x}$ = 1-2 cos x
 
-    - $\dot{x}$ $= -x \text{ ln } x$ This is an example of the Gompertz differential equation which can be used to model tumour growth. There is a lovely exercise on the Gompertz equation here\.
+    - $\dot{x}$ $= -x \text{ ln } x$ This is an example of the [Gompertz differential equation](https://www.youtube.com/watch?v=K6jUVW-xrh8) which can be used to model tumour growth. There is a lovely exercise on the Gompertz equation [here](https://math.libretexts.org/Bookshelves/Calculus/Exercises_(Calculus)/Exercises%3A_Calculus_(OpenStax)/08.E%3A_Differential_Equations_(Exercises))\.
 
-    - $\dot{N}$ $= N\left(1-\frac{N}{2}\right)\left(N-1\right)$ This differential equation models the Allee Effect.
+    - $\dot{N}$ $= N\left(1-\frac{N}{2}\right)\left(N-1\right)$ This differential equation models the [Allee Effect](https://www.youtube.com/watch?v=zJpW3c7p__g).
 
 - Classify the fixed points of the following systems using a linear stability analysis. 
 
