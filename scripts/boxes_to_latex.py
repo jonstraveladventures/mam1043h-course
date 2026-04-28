@@ -53,7 +53,12 @@ def _strip_option_triplets(children):
     n = len(children)
     while i < n:
         c = children[i]
-        # Flat triplet: name "->" value
+        # Flat triplet: name "->" value.  Sometimes followed by an orphan
+        # "]" or "," from the parser's bracket-to-child slip on the
+        # closing bracket of the *enclosing* call (e.g. the trailing "]"
+        # of `InterpretationBox[..., Editable->False]` ends up as a
+        # sibling token in the parent RowBox — it would otherwise auto-
+        # scale to `\right]` and break the math).  Absorb those.
         if (
             isinstance(c, str)
             and c in _OPTION_NAMES
@@ -61,6 +66,10 @@ def _strip_option_triplets(children):
             and children[i + 1] in ("->", "\\[Rule]", "\\[RuleDelayed]")
         ):
             i += 3
+            while i < n and isinstance(children[i], str) and children[i] in (
+                "]", ",", "\n",
+            ):
+                i += 1
             continue
         # Rule node
         if (
@@ -71,6 +80,10 @@ def _strip_option_triplets(children):
             and c[1] in _OPTION_NAMES
         ):
             i += 1
+            while i < n and isinstance(children[i], str) and children[i] in (
+                "]", ",", "\n",
+            ):
+                i += 1
             continue
         out.append(c)
         i += 1
