@@ -23,7 +23,10 @@
 
     <h2>Section 3: Bifurcations</h2>
     <ul>
-      {{ range $pages }}{{ if and (ge .Weight 31) (lt .Weight 60) }}
+      {{/* 31-38 is the main Section 3 content; 39-47 are the per-exercise
+           solution pages, which are linked inline from sec3-8-exercises
+           so we don't list them again on the contents page. */}}
+      {{ range $pages }}{{ if and (ge .Weight 31) (lt .Weight 39) }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}{{ end }}
     </ul>
