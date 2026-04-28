@@ -1,15 +1,18 @@
 {{ define "main" }}
 {{ $currentWeight := .Weight }}
-{{ $sortedPages := .Site.RegularPages.ByWeight }}
+{{/* Exclude About (weight: 100, sentinel) from chapter prev/next chains */}}
+{{ $sortedPages := where .Site.RegularPages.ByWeight "Weight" "lt" 100 }}
 {{ $prevPage := false }}
 {{ $nextPage := false }}
-{{ range $idx, $page := $sortedPages }}
-  {{ if eq $page.Weight $currentWeight }}
-    {{ if gt $idx 0 }}
-      {{ $prevPage = index $sortedPages (sub $idx 1) }}
-    {{ end }}
-    {{ if lt (add $idx 1) (len $sortedPages) }}
-      {{ $nextPage = index $sortedPages (add $idx 1) }}
+{{ if lt $currentWeight 100 }}
+  {{ range $idx, $page := $sortedPages }}
+    {{ if eq $page.Weight $currentWeight }}
+      {{ if gt $idx 0 }}
+        {{ $prevPage = index $sortedPages (sub $idx 1) }}
+      {{ end }}
+      {{ if lt (add $idx 1) (len $sortedPages) }}
+        {{ $nextPage = index $sortedPages (add $idx 1) }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
