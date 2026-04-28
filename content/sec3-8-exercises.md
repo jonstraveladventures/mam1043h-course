@@ -19,13 +19,13 @@ For instance, if you were given the equation $\dot{x}=x^{2}+r$, you would write:
 
 iii) The bifurcation diagram looks like:
 
-    - $\dot{x}=2+r x +x^{2}$ ([Solution](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises1a) including questions 2 and 3)
+    - $\dot{x}=2+r x +x^{2}$ ([Solution](/sec3-8-exercise-1a/) including questions 2 and 3)
 
-    - $\dot{ x}=r-\text{ cosh }\left(x\right) $([Solution](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises1b) including questions 2 and 3)
+    - $\dot{ x}=r-\text{ cosh }\left(x\right) $([Solution](/sec3-8-exercise-1b/) including questions 2 and 3)
 
-    - $\dot{ x}=r+x-\text{ ln }\left(1+x\right) $([Solution](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises1c) including questions 2 and 3)
+    - $\dot{ x}=r+x-\text{ ln }\left(1+x\right) $([Solution](/sec3-8-exercise-1c/) including questions 2 and 3)
 
-    - $\dot{x}=r+\frac{x}{2}-\frac{x}{1+x}$ ([Solution](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises1d) including questions 2 and 3)
+    - $\dot{x}=r+\frac{x}{2}-\frac{x}{1+x}$ ([Solution](/sec3-8-exercise-1d/) including questions 2 and 3)
 
 - For the example of the equation $\dot{x}=x^{2}+r$, plot the potential for different values of $r$ and see what the behaviour looks like there in that picture.
 
@@ -41,19 +41,19 @@ which you can then plug into the right hand side of $\dot{ x}=r-\text{ cosh }\le
 
     - $\dot{x}=r x+x^{2}$ (This is the canonical example of a transcritical bifurcation (with $+x^{2}$ instead of $-x^{2}$). Follow the logic in the notes for the original example).
 
-    - $\dot{ x}=r x-\text{ ln }\left(1+x\right)$ ([Solution](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises4b))
+    - $\dot{ x}=r x-\text{ ln }\left(1+x\right)$ ([Solution](/sec3-8-exercise-4b/))
 
-    - $\dot{ x}=x-r x \left(1-x\right)$ ([Solution](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises4c))
+    - $\dot{ x}=x-r x \left(1-x\right)$ ([Solution](/sec3-8-exercise-4c/))
 
-    - $\dot{x}=x\left(r-e^{x}\right)$ ([Solution](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises4d))
+    - $\dot{x}=x\left(r-e^{x}\right)$ ([Solution](/sec3-8-exercise-4d/))
 
-    - $\dot{x}=r \text{ ln } x+x-1$ ([Solution](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises4e))
+    - $\dot{x}=r \text{ ln } x+x-1$ ([Solution](/sec3-8-exercise-4e/))
 
 - Now do the same thing as questions **1** and **2** for the following pitchfork bifurcations. This time also classify them as subcritical or supercritical.
 
     - $\dot{x}=r x+4x^{3}$ (This is the canonical example of a pitchfork bifurcation but with an extra factor of 4. The method is the same as in the notes for pitchfork bifurcations, just with a scaling. Make sure that you can follow this).
 
-    - $\dot{ x}=r x-\text{ sinh }\left(x\right)$ ([Solution](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises5b))
+    - $\dot{ x}=r x-\text{ sinh }\left(x\right)$ ([Solution](/sec3-8-exercise-5b/))
 
     - $\dot{ x}=r x-4x^{3}$
 

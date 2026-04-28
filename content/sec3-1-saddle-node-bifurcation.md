@@ -180,7 +180,6 @@ $$
 which is exactly the same form that we started with. It turns out that for all saddle-node bifurcations this is true. We can always make this change of variables to put our equation, close to the bifurcation point in the Normal Form.
 
 What this tells us then is that if we study just the Normal Form equation, and all saddlenode bifurcations are really the same as the Normal Form saddlenode bifurcation close to the bifurcation, then we understand all saddlenode bifurcations, however strange they may look.
-
 ## Animated versions
 
 ![Animation](/images/part3a/anim_001.gif)

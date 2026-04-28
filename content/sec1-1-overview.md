@@ -38,53 +38,53 @@ The Course Content:
 Section 1: Introduction (Strogatz chapter 1)
 
 - 1.1 Overview of the course (what you're reading now)
-- 1.2 a) [The history of dynamics - The beginnings of dynamics](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1b)
-- 1.2 b) [The history of dynamics - Poincare and chaos](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1c)
+- 1.2 a) [The history of dynamics - The beginnings of dynamics](/sec1-2a-history-beginnings/)
+- 1.2 b) [The history of dynamics - Poincare and chaos](/sec1-2b-history-poincare/)
 
 Aside: [Difference equations](https://www.wolframcloud.com/obj/jon.shock/differenceequations)
 
-- 1.3 [Systems of differential equations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1d)
-- 1.4 [Phase space](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1e)
-- 1.5 [The spectrum of systems of differential equations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1f)
+- 1.3 [Systems of differential equations](/sec1-3-systems-of-differential-equations/)
+- 1.4 [Phase space](/sec1-4-phase-space/)
+- 1.5 [The spectrum of systems of differential equations](/sec1-5-spectrum-of-systems/)
 
-- 1.6 [Exercises for part 1](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1exercises)
+- 1.6 [Exercises for part 1](/sec1-6-exercises/)
 
 Section 2: Flows on the line (Strogatz chapter 2)
 
-- 2.1 [Fixed points and trajectories](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2a)
-- 2.2 [Fixed Points and their stability](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2b)
-- 2.3 [Linear stability analysis](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2c)
-- 2.4 [Existence and uniqueness of solutions](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2d)
-- 2.5 [Absence of oscillations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2e)
-- 2.6 [Potentials](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2f)
-- 2.7 a) [Solving equations on the computer](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2g)
+- 2.1 [Fixed points and trajectories](/sec2-1-fixed-points-and-trajectories/)
+- 2.2 [Fixed Points and their stability](/sec2-2-fixed-points-and-stability/)
+- 2.3 [Linear stability analysis](/sec2-3-linear-stability-analysis/)
+- 2.4 [Existence and uniqueness of solutions](/sec2-4-existence-and-uniqueness/)
+- 2.5 [Absence of oscillations](/sec2-5-absence-of-oscillations/)
+- 2.6 [Potentials](/sec2-6-potentials/)
+- 2.7 a) [Solving equations on the computer](/sec2-7a-solving-on-computer/)
 
-- 2.7 b) [Back to basics: A summary of phase spaces and phase portraits](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2h)
-- 2.8 [Exercises for part 2](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2exercises)
+- 2.7 b) [Back to basics: A summary of phase spaces and phase portraits](/sec2-7b-back-to-basics/)
+- 2.8 [Exercises for part 2](/sec2-8-exercises/)
 
 
 Section 3: Bifurcations (Strogatz chapter 3)
 
-- 3.1 and 3.2 [Introduction and saddle-node bifurcations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3a)
-- 3.3 [Transcritical bifurcations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3b)
-- 3.4 [Pitchfork bifurcations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3c)
-- 3.5 [Combinations of bifurcations](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3d)
-- 3.6 [Chaos and the logistic map](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3e)
-- 3.7 a) [Imperfect bifurcations and catastrophes](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3f)
+- 3.1 and 3.2 [Introduction and saddle-node bifurcations](/sec3-1-saddle-node-bifurcation/)
+- 3.3 [Transcritical bifurcations](/sec3-3-transcritical-bifurcation/)
+- 3.4 [Pitchfork bifurcations](/sec3-4-pitchfork-bifurcation/)
+- 3.5 [Combinations of bifurcations](/sec3-5-combinations-of-bifurcations/)
+- 3.6 [Chaos and the logistic map](/sec3-6-chaos-and-logistic-map/)
+- 3.7 a) [Imperfect bifurcations and catastrophes](/sec3-7a-imperfect-bifurcations/)
 
-- 3.7 b) [Imperfect bifurcations and catastrophes part 2](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3fii)
-- 3.8 [Exercises for part 3](https://www.wolframcloud.com/obj/jon.shock/MAM1043part3exercises)
+- 3.7 b) [Imperfect bifurcations and catastrophes part 2](/sec3-7b-imperfect-bifurcations-2/)
+- 3.8 [Exercises for part 3](/sec3-8-exercises/)
 
 
 Section 4: Linear systems in two dimensions (Strogatz chapter 5)
 
-- 4.1 [Introduction to linear systems in two dimensions](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4a)
-- 4.2 [Classification of linear systems and their origin part 1](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4b)
+- 4.1 [Introduction to linear systems in two dimensions](/sec4-1-intro-2d-linear/)
+- 4.2 [Classification of linear systems and their origin part 1](/sec4-2-classification-part-1/)
 
-- 4.3 [Classification of linear systems and their origin part 2](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4c)
-- 4.4 [Application: Love affairs](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4d)
+- 4.3 [Classification of linear systems and their origin part 2](/sec4-3-classification-part-2/)
+- 4.4 [Application: Love affairs](/sec4-4-love-affairs/)
 
-- 4.5 [Exercises for part 4](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4exercises)
+- 4.5 [Exercises for part 4](/sec4-5-exercises/)
 
 ## Chapter 1: Introduction
 

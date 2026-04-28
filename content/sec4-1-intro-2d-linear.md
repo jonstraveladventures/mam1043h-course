@@ -45,7 +45,7 @@ The fact that the system is linear (there are no $x^{ 2}$ or$ \text{ sin }\left(
 
 If you have found yourself two different solutions to such a system, then you can always add them together and that will give you a new solution. I have written about this extensively [in the context of second order systems](http://www.mathemafrica.org/?p=11488), but the logic is exactly the same here.
 
-Let’s look at a simple example of such a system. It’s not going to look like it at first, but let ’s see. Remember way back in [section 1.5](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1e) we looked at the pendulum example. The equation for the pendulum was:
+Let’s look at a simple example of such a system. It’s not going to look like it at first, but let ’s see. Remember way back in [section 1.5](/sec1-4-phase-space/) we looked at the pendulum example. The equation for the pendulum was:
 
 $$
 \ddot{x}+\frac{g}{l}\text{ sin }\left(x\right)=0
@@ -87,7 +87,7 @@ $$
 
 is at the heart of a great deal of physics. ω here is the frequency of oscillations. This system is called the **simple harmonic oscillator**. In the pendulum example above, ${\omega{}}^{2}=g/l$.
 
-Remember that in one dimension, the phase portrait was a series of arrows on the line. Well, now we can draw the phase portrait as a series of lines on the plane. The phase space is given by the $\left(x,y\right) $plane, which we should remember is really equivalent to (but not quite the same as) the $\left(x,\dot{x}\right) \text{ plane }$. This means that each point in the plane corresponds to a position of our ‘particle’ (or pendulum, or what have you), and its velocity. We’ve actually seen all of this back in [section 1.5](https://www.wolframcloud.com/obj/jon.shock/MAM1043part1e) Go have a read through it again to make sure that you understand.
+Remember that in one dimension, the phase portrait was a series of arrows on the line. Well, now we can draw the phase portrait as a series of lines on the plane. The phase space is given by the $\left(x,y\right) $plane, which we should remember is really equivalent to (but not quite the same as) the $\left(x,\dot{x}\right) \text{ plane }$. This means that each point in the plane corresponds to a position of our ‘particle’ (or pendulum, or what have you), and its velocity. We’ve actually seen all of this back in [section 1.5](/sec1-4-phase-space/) Go have a read through it again to make sure that you understand.
 
 Let’s just see how to put the arrows in the plane again using our pendulum example (for small oscillations). Here is the phase plane:
 
@@ -243,8 +243,7 @@ We can do the same thing for other values of initial conditions and values of $a
 
 Now try and plot the trajectories for some of these different initial conditions and values of $a$.
 
-You will explore the fixed point structure of this system in the [Exercises for part 4](https://www.wolframcloud.com/obj/jon.shock/MAM1043part4exercises).
-
+You will explore the fixed point structure of this system in the [Exercises for part 4](/sec4-5-exercises/).
 ## Animated versions
 
 ![Animation](/images/part4a/anim_001.gif)

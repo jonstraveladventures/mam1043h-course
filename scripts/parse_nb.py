@@ -322,6 +322,69 @@ def _bulletize_toc_lines(s: str) -> str:
     return '\n'.join(final)
 
 
+# Mapping from Wolfram Cloud notebook handles to the corresponding
+# local Hugo content page.  The original .nb files cross-link to other
+# parts of the course via wolframcloud.com URLs, but those resolve to
+# the source notebooks, not to this site.  We rewrite each known link
+# to a root-relative path; the Hugo render-link hook prefixes the
+# site's baseURL.  Unknown handles (e.g. differenceequations,
+# MAM10434bpicN) are left alone — they don't have a local page yet.
+WOLFRAM_CLOUD_TO_LOCAL = {
+    "MAM1043part1a":          "/sec1-1-overview/",
+    "MAM1043part1b":          "/sec1-2a-history-beginnings/",
+    "MAM1043part1c":          "/sec1-2b-history-poincare/",
+    "MAM1043part1d":          "/sec1-3-systems-of-differential-equations/",
+    "MAM1043part1e":          "/sec1-4-phase-space/",
+    "MAM1043part1f":          "/sec1-5-spectrum-of-systems/",
+    "MAM1043part1exercises":  "/sec1-6-exercises/",
+    "MAM1043part2a":          "/sec2-1-fixed-points-and-trajectories/",
+    "MAM1043part2b":          "/sec2-2-fixed-points-and-stability/",
+    "MAM1043part2c":          "/sec2-3-linear-stability-analysis/",
+    "MAM1043part2d":          "/sec2-4-existence-and-uniqueness/",
+    "MAM1043part2e":          "/sec2-5-absence-of-oscillations/",
+    "MAM1043part2f":          "/sec2-6-potentials/",
+    "MAM1043part2g":          "/sec2-7a-solving-on-computer/",
+    "MAM1043part2h":          "/sec2-7b-back-to-basics/",
+    "MAM1043part2exercises":  "/sec2-8-exercises/",
+    "MAM1043part2answers":    "/sec2-8-answers/",
+    "MAM1043part3a":          "/sec3-1-saddle-node-bifurcation/",
+    "MAM1043part3b":          "/sec3-3-transcritical-bifurcation/",
+    "MAM1043part3c":          "/sec3-4-pitchfork-bifurcation/",
+    "MAM1043part3d":          "/sec3-5-combinations-of-bifurcations/",
+    "MAM1043part3e":          "/sec3-6-chaos-and-logistic-map/",
+    "MAM1043part3f":          "/sec3-7a-imperfect-bifurcations/",
+    "MAM1043part3fii":        "/sec3-7b-imperfect-bifurcations-2/",
+    "MAM1043part3exercises":  "/sec3-8-exercises/",
+    "MAM1043part3exercises1a": "/sec3-8-exercise-1a/",
+    "MAM1043part3exercises1b": "/sec3-8-exercise-1b/",
+    "MAM1043part3exercises1c": "/sec3-8-exercise-1c/",
+    "MAM1043part3exercises1d": "/sec3-8-exercise-1d/",
+    "MAM1043part3exercises4b": "/sec3-8-exercise-4b/",
+    "MAM1043part3exercises4c": "/sec3-8-exercise-4c/",
+    "MAM1043part3exercises4d": "/sec3-8-exercise-4d/",
+    "MAM1043part3exercises4e": "/sec3-8-exercise-4e/",
+    "MAM1043part3exercises5b": "/sec3-8-exercise-5b/",
+    "MAM1043part4a":          "/sec4-1-intro-2d-linear/",
+    "MAM1043part4b":          "/sec4-2-classification-part-1/",
+    "MAM1043part4c":          "/sec4-3-classification-part-2/",
+    "MAM1043part4d":          "/sec4-4-love-affairs/",
+    "MAM1043part4exercises":  "/sec4-5-exercises/",
+    "MAM1043part4answers":    "/sec4-5-answers/",
+}
+
+_WOLFRAM_LINK_RE = re.compile(
+    r"https?://(?:www\.)?wolframcloud\.com/obj/[^/\s)]+/([A-Za-z0-9_]+)"
+)
+
+
+def _rewrite_wolfram_links(s: str) -> str:
+    def repl(m: "re.Match[str]") -> str:
+        handle = m.group(1)
+        local = WOLFRAM_CLOUD_TO_LOCAL.get(handle)
+        return local if local else m.group(0)
+    return _WOLFRAM_LINK_RE.sub(repl, s)
+
+
 def clean_text_whitespace(s: str) -> str:
     """Collapse runs of whitespace in plain prose (not math)."""
     # Preserve leading whitespace on each line (for list-item continuation
@@ -333,6 +396,8 @@ def clean_text_whitespace(s: str) -> str:
         return lead + re.sub(r'[ \t]+', ' ', rest)
     s = '\n'.join(_collapse_interior_ws(ln) for ln in s.split('\n'))
     s = re.sub(r'\n{3,}', '\n\n', s)
+    # Rewrite wolframcloud.com cross-links to local Hugo pages.
+    s = _rewrite_wolfram_links(s)
     # Unwrap $...$ blocks that only contain \text{} fragments (plus prose)
     s = _INLINE_MATH_RE.sub(_unwrap_text_only_math, s)
     # Strip leaked Mathematica metadata

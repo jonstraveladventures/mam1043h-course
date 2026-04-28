@@ -1,0 +1,5 @@
+{{- $href := .Destination -}}
+{{- if hasPrefix $href "/" -}}
+  {{- $href = printf "%s%s" .Page.Site.BaseURL (strings.TrimPrefix "/" $href) -}}
+{{- end -}}
+<a href="{{ $href | safeURL }}"{{ with .Title }} title="{{ . | safeHTML }}"{{ end }}{{ if and (not (hasPrefix .Destination "/")) (not (hasPrefix .Destination "#")) }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>

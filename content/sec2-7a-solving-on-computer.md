@@ -130,7 +130,6 @@ Our direction field would look like this:
 Which is a perfectly good direction field, but we notice that the gradients of the lines have nothing to do with the value of $t$ as we would expect from the equation. We can spot here the fixed point of $x=0$, and indeed note that it is an unstable fixed point. You will always flow away from it.
 
 Soon we will move on to section 3 and explore bifurcations, which is really about the way the fixed points can themselves behave. First of all, let’s have a quick recap of phase spaces and phase portraits.
-
 ## Animated versions
 
 ![Animation](/images/part2g/anim_001.gif)

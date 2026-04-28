@@ -71,7 +71,7 @@ $$
 
 Fixed points are also know as equilibrium solutions, steady-state solutions or just constant solutions.
 
-As $x \left(t\right)=x^{*}$ will be a solution for all time. The tricky thing about these is that, if you don't start at a steady state solution, you will never get to one. Can you see why? (Look [here](https://www.wolframcloud.com/obj/jon.shock/MAM1043part2a) if not)
+As $x \left(t\right)=x^{*}$ will be a solution for all time. The tricky thing about these is that, if you don't start at a steady state solution, you will never get to one. Can you see why? (Look [here](/sec2-1-fixed-points-and-trajectories/) if not)
 
 Plotting Trajectories
 
