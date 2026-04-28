@@ -45,9 +45,21 @@ UsingFrontEnd[
         Continue[]
       ];
 
-      (* Check if cell contains graphics (GraphicsBox, Graphics3DBox, etc.) *)
-      hasGraphics = !FreeQ[cellExpr,
-        GraphicsBox | Graphics3DBox | RasterBox | DynamicModuleBox];
+      (* Stricter filter: a real graphics output has a Graphics{,3D}Box at
+         the *top* of its BoxData (possibly wrapped in TagBox/StyleBox/FormBox
+         or a Manipulate's DynamicModuleBox).  An expression like
+         {InterpolatingFunction[...][t], …} also contains GraphicsBox deep
+         inside (the IF icon), but its top is a RowBox — we want to skip
+         those, which the previous !FreeQ-based filter rasterised as garbage. *)
+      hasGraphics = Module[{inner = cellExpr},
+        While[
+          MatchQ[inner, _Cell] && Length[inner] >= 1, inner = inner[[1]]];
+        While[
+          MatchQ[inner, _BoxData | _TagBox | _StyleBox | _FormBox] &&
+            Length[inner] >= 1, inner = inner[[1]]];
+        MatchQ[inner,
+          _GraphicsBox | _Graphics3DBox | _RasterBox | _DynamicModuleBox]
+      ];
 
       If[!hasGraphics,
         skipped++;

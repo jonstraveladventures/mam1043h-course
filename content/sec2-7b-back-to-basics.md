@@ -49,7 +49,7 @@ $$
 \\\dot{F}\left(t\right)=\delta{} R\left(t\right) F\left(t\right)-\gamma{} F\left(t\right)
 $$
 
-where the parameters α, β, γ, δ are factors related to the environment and they will generally be fixed for a given system. $R\left(t\right) $is the rabbit population and $F\left(t\right) \text{ is the } \text{ fox population }$. The phase space again in this case is two-dimensional, made up now of the number of the number of rabbits and foxes:
+where the parameters α, β, γ, δ are factors related to the environment and they will generally be fixed for a given system. $R\left(t\right) $is the rabbit population and $F\left(t\right) \text{ is the } \text{ fox population }$. The phase space again in this case is two-dimensional, made up now of the number of rabbits and the number of foxes:
 
 ![Figure 4](/images/part2h/output_004.png)
 
