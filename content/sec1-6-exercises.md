@@ -35,9 +35,4 @@ math: true
 
 How many dimensions is the phase space of this system (you can imagine that the system is in swinging in a plane (ie. not in three dimensions))? ie. how many values would you need to capture what is happening at any one moment?
 
-![Figure 1](/images/part1exercises/output_001.png)
-
-## Animated versions
-
-![Animation](/images/part1exercises/anim_001.gif)
-
+![Double pendulum animation](/images/part1exercises/anim_001.gif)

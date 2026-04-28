@@ -25,7 +25,7 @@ This says that I have two variables, X and Y, which can both change with time. T
 
 (You don't need to be able to solve these equations)
 
-![Figure 1](/images/part1d/output_001.png)
+![Animated solutions: X(t) and Y(t) as initial values vary](/images/part1d/anim_002.gif)
 
 What are we seeing here? Well, we have these two functions, X and Y, which are changing in time, and they are related through a system of first order differential equations. Changing the values of the functions at an initial time alter the future behaviour of them.
 
@@ -69,7 +69,7 @@ Where we have *n* variables $x_{1} \text{ to } x_{n}$ and their derivatives are 
 
 These variables could be many things. For instance if we were talking about a particle moving around in three dimensions then they might correspond to the coordinates so we would have that $x_{1}$, $x_{2}$, and $x_{3} $are the traditional x, y and z coordinates respectively. Here is a particle moving about in three dimensions with the $x_{i}'s$ changing in time.
 
-![Figure 2](/images/part1d/output_002.png)
+![Particle moving in three dimensions](/images/part1d/anim_001.gif)
 
 **The differential equation says**: however the thing is moving, the rate of change of the $x_{i}'s$ has some fixed relationship with the value of the $x_{i}'s $themselves.
 
@@ -134,8 +134,3 @@ We have just converted our second order equation into two first order equations 
 Hang on a minute. **Why** are we doing this?
 
 Well, it turns out to be really convenient to work with systems of first order equations in general.
-
-## Animated versions
-
-![Animation](/images/part1d/anim_001.gif)
-
