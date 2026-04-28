@@ -113,7 +113,7 @@ What this really means is that when we are at position $\frac{1}{2}$ and going a
 
 Now see what happens as you move the point of interest around in the plane:
 
-![2D linear system animation 1](/images/part4a/anim_001.gif)
+![Figure 5](/images/part4a/output_005.png)
 
 Now let’s plot lots of these arrows together in the plane to see the ‘flow’ of this system:
 
@@ -137,7 +137,7 @@ $$
 
 We can plot this in the plane:
 
-![2D linear system animation 2](/images/part4a/anim_002.gif)
+![Figure 7: closed orbit in the phase plane](/images/part4a/anim_001.gif)
 
 Such a circle is known as a **Closed Orbit** which is a general type of solution which comes back to itself in phase space. Such an orbit will always correspond to an oscillatory solution.
 
@@ -235,7 +235,7 @@ The particle moves quickly in to the centre, then slows down and will never actu
 
 As a trajectory, this looks like (with $x\left(t\right)$ in blue and $y\left(t\right)$ in red):
 
-![Figure 11](/images/part4a/output_011.png)
+![Trajectory animation: x(t) in blue, y(t) in red](/images/part4a/anim_002.gif)
 
 We can do the same thing for other values of initial conditions and values of $a$:
 
