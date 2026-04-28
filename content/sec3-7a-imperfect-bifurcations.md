@@ -143,7 +143,7 @@ In fact we can plot these on the bifurcation diagram and what we actually get is
 
 A saddle-node bifurcation appears! Can we see what happens overall as we change $ h$?
 
-![Imperfect pitchfork bifurcation: h sweeping from −1 to +1](/images/part3f/anim_001.gif)
+![Imperfect pitchfork bifurcation: h sweeping from -1 to +1](/images/part3f/anim_001.gif)
 
 **Insight:** I know this might seem a bit crazy initially and there appear to be few patterns between what you’re doing, but take some time to break down how you identify the fixed points and their stability ’s as done on this page and the previous ones. Once you solidify your understanding of this section it will become clearer how to introduce this “extra variable” and deal with different forms instead of your standard bifurcation types!
 

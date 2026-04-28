@@ -11,23 +11,23 @@ math: true
 
 - Read through some of the links about the following and put a link in the forum about the most interesting thing you've found.
 
-    - Kepler’s laws
+- Kepler’s laws
 
-    - The three body problem
+- The three body problem
 
 - Although we talk about Tycho and Sophia Brahe as being responsible for some of the most accurate astronomical observations of the era, many cultures had made amazing progress in observations even centuries before. Have a look into ancient Chinese, Indian and Arabic astronomy and write in the forum any particularly interesting things that you discover.
 
 - Put the following systems of differential equations in the form of first order systems of autonomous differential equations.
 
-    - $x'' \left(t\right) + 3 x' \left(t\right) - 4 x\left(t\right)=\text{ sin }\left(x$(t))
+- $x'' \left(t\right) + 3 x' \left(t\right) - 4 x\left(t\right)=\text{ sin }\left(x$(t))
 
-    - $x''\left(t\right)+y\left(t\right)+x'\left(t\right)={x\left(t\right)}^{2}, y'\left(t\right)+x\left(t\right)={x\left(t\right)}^{2}$
+- $x''\left(t\right)+y\left(t\right)+x'\left(t\right)={x\left(t\right)}^{2}, y'\left(t\right)+x\left(t\right)={x\left(t\right)}^{2}$
 
-    - $y''\left(t\right)-y'\left(t\right)+x\left(t\right)={y\left(t\right)}^{2}, x'\left(t\right)=\text{ sin }\left(y\left(t\right)\right)$
+- $y''\left(t\right)-y'\left(t\right)+x\left(t\right)={y\left(t\right)}^{2}, x'\left(t\right)=\text{ sin }\left(y\left(t\right)\right)$
 
-    - $x'''\left(t\right)+x'\left(t\right)=x''{\left(t\right)}^{2}$
+- $x'''\left(t\right)+x'\left(t\right)=x''{\left(t\right)}^{2}$
 
-    - $x''' \left(t\right) + x' \left(t\right) = x'' {\left(t\right)}^{2}-t^{2}$
+- $x''' \left(t\right) + x' \left(t\right) = x'' {\left(t\right)}^{2}-t^{2}$
 
 - How many dimensions is the phase space of a particle moving freely on a two-dimensional surface?
 
