@@ -296,3 +296,31 @@ footer p { margin: 0.2rem 0; }
     font-size: 0.9rem;
   }
 }
+
+/* Interactive widgets — JSXGraph-based controls */
+.cobweb-widget {
+  margin: 1.5rem 0;
+}
+.cobweb-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+.cobweb-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-weight: 500;
+}
+.cobweb-controls input[type="range"] {
+  width: 220px;
+}
+.cobweb-controls span {
+  font-family: var(--code-font, monospace);
+  color: #1f4e9c;
+  min-width: 2.5em;
+  display: inline-block;
+}

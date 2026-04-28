@@ -185,8 +185,23 @@ to learn more about Feigenbaum and his constant.
 
 If you haven’t already done so, take a look at the Veritasium video on this [here](https://www.youtube.com/watch?v=ovJcsL7vyrk&vl=en).
 
-I’m going to leave you with this plot. See if you can figure out what’s going on. The red line is a line of gradient 1 through the origin:
+I’m going to leave you with this interactive plot. See if you can figure out what’s going on. The red dashed line is a line of gradient 1 through the origin (the diagonal $P_n = P_{n-1}$). The blue parabola is $P_n = r\,P_{n-1}\,(1-P_{n-1})$. The green cobweb starts at $(P_0, 0)$ and bounces between the parabola and the diagonal — each pair of edges is one iteration of the map.
 
-![Figure 16](/images/part3e/output_016.png)
+<div class="cobweb-widget">
+  <div class="cobweb-controls">
+    <label>r = <span id="r-value">3.00</span>
+      <input type="range" id="r-slider" min="0" max="4" step="0.01" value="3">
+    </label>
+    <label>P<sub>0</sub> = <span id="p0-value">0.50</span>
+      <input type="range" id="p0-slider" min="0" max="1" step="0.01" value="0.5">
+    </label>
+    <label>iterations = <span id="iter-value">8</span>
+      <input type="range" id="iter-slider" min="1" max="40" step="1" value="8">
+    </label>
+  </div>
+  <div id="logistic-cobweb-board" style="width:520px; height:520px; max-width:100%;"></div>
+</div>
+
+<script src="../js/widgets/logistic-cobweb.js"></script>
 
 Back to our study of first order differential equations!
