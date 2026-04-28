@@ -3,9 +3,9 @@ title: "3.8 Exercise 1c"
 weight: 41
 math: true
 ---
-## Exercises 3.1.a
+## Exercise 1c
 
-$For: \dot{x}=r+x-\text{ log }\left(1+x\right)$
+For $\dot{x}=r+x-\ln\left(1+x\right)$:
 
 - i) Sketch the different vector field types that appear when you vary $r$. We’re actually going to do this first the hard way, then the easier way.
 
@@ -29,7 +29,7 @@ We can plot these fixed points and this gives us
 
 The critical point is when the there is only a single solution. This occurs when r=0, x=0:
 
-Critical point at $r = 1$, and this occurs at: $x=0$:
+Critical point at $r = 0$, and this occurs at: $x=0$:
 
 ![Figure 5](/images/part3exercises1c/output_005.png)
 

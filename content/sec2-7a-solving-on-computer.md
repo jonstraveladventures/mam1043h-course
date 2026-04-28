@@ -3,7 +3,7 @@ title: "2.7a Solving Equations on the Computer"
 weight: 27
 math: true
 ---
-## Section 2.6: Solving Equations on the Computer
+## Section 2.7a: Solving Equations on the Computer
 
 Solving Equations on the Computer
 

@@ -24,7 +24,11 @@ All would lead to two first order differential equations (Make sure that you can
 The other constraint that we will have is that while we were previously looking at systems which could be non-linear, we are only going to deal with linear systems here. This means that all of the equations will be of the form:
 
 $$
-\\\dot{y}=c x+d y
+\dot{x}=a x+b y
+$$
+
+$$
+\dot{y}=c x+d y
 $$
 
 Where a, b, c and d are constant parameters. We can also write this as a matrix equation of the form:
@@ -68,7 +72,7 @@ $$
 Now if we play our trick of letting $\dot{x}=y$, then $\ddot{x} = \dot{y}$, then we can write:
 
 $$
-\\\dot{y}=-\frac{g}{l}x
+\dot{y}=-\frac{g}{l}x
 $$
 
 Which can be written as:
@@ -98,7 +102,11 @@ Note here that we’ve gone out to ±1 on the $x$-axis. We should be careful bec
 Now let’s ask what the arrow should look like at the point... (3,1), for example. Let’s also set $l=g=1$, so our equations are:
 
 $$
-\\\dot{y}=-x
+\dot{y}=-x
+$$
+
+$$
+\dot{x}=y
 $$
 
 So, when $x=\frac{1}{2}$ and $y=\frac{1}{4}$, this says that the point in our phase space will be changing its $x$ value at a rate of $\frac{1}{4}$, and its $y$ value by a rate of $\frac{-1}{2}$. So it’s moving faster in the vertical, down direction than it is in the horizontal right direction, and we can draw in an arrow accordingly:
@@ -126,13 +134,21 @@ What would happen to a particle of it was placed at some point in this phase pla
 Note that up until now we’ve looked at the behaviour without solving the equations at all. In fact, in this case, it ’s pretty easy to solve these equations. The general solution is:
 
 $$
-\\y=c_{2}\text{ cos } t-c_{1}\text{ sin } t
+x=c_{1}\cos t+c_{2}\sin t
 $$
 
-Where $c_{1} \text{ and } c_{2}$ are constants. The solution which starts at $x=0.5, y=0$ is the above solution with $c_{1}=0.5, c_{2}=0$, so the solution is:
+$$
+y=c_{2}\cos t-c_{1}\sin t
+$$
+
+Where $c_{1}$ and $c_{2}$ are constants. The solution which starts at $x=0.5, y=0$ is the above solution with $c_{1}=0.5, c_{2}=0$, so the solution is:
 
 $$
-\\y=-0.5\text{ sin } t
+x=0.5\cos t
+$$
+
+$$
+y=-0.5\sin t
 $$
 
 We can plot this in the plane:

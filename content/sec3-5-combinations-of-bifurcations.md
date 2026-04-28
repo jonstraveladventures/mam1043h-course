@@ -70,13 +70,13 @@ Let's say that we now quickly increase our value of $r$ to $r=-0.01$. Because we
 Because of our exponential decay, we are still at a positive (though small) value of $x$. It actually depends how quickly we move our dial and how long we ’ve been waiting as to how small, but we know that we couldn ’t have crossed over to a negative value of $x$. Let’s say that after waiting at $r=-0.5$ for 2 seconds, we suddenly altered the value of $r$ to -0.01 and stay there for 2 seconds. We can first work out that after the first 2 seconds our $x$ value would be:
 
 $$
-x\left(2\right)=0.1 e^{-0.5 2}=0.1 e^{-1}=0.036787944117144235`
+x\left(2\right)=0.1 e^{-0.5 2}=0.1 e^{-1}=0.0367879441171
 $$
 
 Then our new r value is -0.01 and we wait there for 2 seconds:
 
 $$
-x\left(4\right)=0.036787944117144235` e^{-0.01 \left(4-2\right)}=0.03605949401730783`
+x\left(4\right)=0.036787944117144235` e^{-0.01 \left(4-2\right)}=0.0360594940173
 $$
 
 Let’s think careful about where that $\left(4-2\right)$ comes from. The solution to the new equation is:
@@ -99,7 +99,7 @@ $$
 x=x_{o} e^{0.5t}
 $$
 
-Where our $"\!\(\*SubscriptBox[StyleBox["x",FontColor->RGBColor[1, 0.5, 0]], "o "]\)"$ is 0.0360595. Of course we can only trust this behaviour when we are close to the unstable fixed point, and really we would have to solve the whole system, so we ’ll do that numerically with **Euler’s method** with a step size of 0.01 for 1000 steps and see where we get to:
+Where our $x_0$ is 0.0360595. Of course we can only trust this behaviour when we are close to the unstable fixed point, and really we would have to solve the whole system, so we ’ll do that numerically with **Euler’s method** with a step size of 0.01 for 1000 steps and see where we get to:
 
 This takes us to 14 seconds and to an $x$-value of 1.16877:
 
@@ -137,7 +137,7 @@ Now, if we suddenly change the value of $r$ back to the original value of $ r=-0
 
 ![Figure 14](/images/part3d/output_014.png)
 
-Which corresponds to: (We can see it goes to the nearest stable fixed point in that verticle slice!)
+Which corresponds to: (We can see it goes to the nearest stable fixed point in that vertical slice!)
 
 ![Figure 15](/images/part3d/output_015.png)
 

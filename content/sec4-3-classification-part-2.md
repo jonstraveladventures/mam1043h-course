@@ -165,7 +165,7 @@ where you can see that there is a single line which is simply scaled which here 
 
 **Let’s summarise a bit here -** What are the options for the eigenvalues:
 
-- Two eigenvalues, both real: Two vectors along which the flow doesn’t change direction. If both correspond to negative eigenvectors then the origin is stable, else it’s unstable.
+- Two eigenvalues, both real: Two vectors along which the flow doesn’t change direction. If both correspond to negative eigenvalues then the origin is stable, else it’s unstable.
 
 - Two eigenvalues, both complex: They will be complex conjugate pairs and this will lead to rotating solutions in the $\left(x,y\right)$ plane. If there is a real part then it will either decay in (negative real part) or explode out (positive real part). The frequency and direction of the rotation is dictated by the imaginary part.
 

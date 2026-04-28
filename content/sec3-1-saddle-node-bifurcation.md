@@ -115,7 +115,7 @@ $$
 r=x^{*}-e^{ x^{*}}
 $$
 
-and plot this this:
+and plot this:
 
 ![Figure 6](/images/part3a/output_006.png)
 

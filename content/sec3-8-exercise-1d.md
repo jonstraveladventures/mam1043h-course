@@ -3,7 +3,7 @@ title: "3.8 Exercise 1d"
 weight: 42
 math: true
 ---
-## Exercises 3.1.d
+## Exercise 1d
 
 $For: \dot{x}=r+\frac{x}{2}-\frac{x}{1+x}$
 

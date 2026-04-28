@@ -13,7 +13,7 @@ $$
 x''\left(t\right)+\frac{g}{l}\text{ sin }\left(x\left(t\right)\right)=0
 $$
 
-In this course, x or y implies x(t) or y(t) respectfully and they’re used interchangeably as the value of x is time dependent.
+In this course, x or y implies x(t) or y(t) respectively and they’re used interchangeably as the value of x is time dependent.
 
 Before we called it θ not $x$ but that's ok - it’s just changing the names of variables. Just for reference, you can solve this and it's given by:
 

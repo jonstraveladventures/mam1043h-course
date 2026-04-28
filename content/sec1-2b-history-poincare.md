@@ -5,7 +5,7 @@ math: true
 ---
 The History of Dynamics - Poincaré and Chaos
 
-In the late 1800's [Poincaré](https://en.wikipedia.org/wiki/Henri_Poincar\[CapitalATilde]\[Copyright])\ came up with geometric ways to understand dynamical systems.
+In the late 1800's [Poincaré](https://en.wikipedia.org/wiki/Henri_Poincar%C3%A9)\ came up with geometric ways to understand dynamical systems.
 
 - Understanding more about the general behaviours of a dynamical system without solving the equations.
 
@@ -13,7 +13,7 @@ In the late 1800's [Poincaré](https://en.wikipedia.org/wiki/Henri_Poincar\[Capi
 
 Poincaré also glimpsed Chaos (The sensitivity of a system to initial conditions)
 
-This is the paths of three planets around each other and is an example of 'Chaotic System'. (We'll discuss more of this later). This image is take from the video at [https://vimeo.com/11993047.](https://vimeo.com/11993047)
+This is the paths of three planets around each other and is an example of 'Chaotic System'. (We'll discuss more of this later). This image is taken from the video at [https://vimeo.com/11993047.](https://vimeo.com/11993047)
 
 Hang on:
 

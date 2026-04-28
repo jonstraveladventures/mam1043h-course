@@ -3,7 +3,7 @@ title: "3.7a Imperfect Bifurcations and Catastrophes"
 weight: 36
 math: true
 ---
-## Section 3.6: Imperfect Bifurcations and Catastrophes
+## Section 3.7a: Imperfect Bifurcations and Catastrophes
 
 Things are about to get multi-dimensional. Hold on to your hats!
 

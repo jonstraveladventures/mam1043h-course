@@ -143,7 +143,7 @@ Spot the stable and unstable fixed points here!
 
 And we can follow along with one of the trajectories to see what the actual particle motion looks like:
 
-k here to see the animation.
+Click here to see the animation.
 
 It looks like the particle makes it to the point $x=\pi{}$, but in reality as we said before, it never quite makes it.
 

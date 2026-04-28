@@ -3,7 +3,7 @@ title: "2.7b Back to Basics — Phase Spaces and Phase Portraits"
 weight: 28
 math: true
 ---
-## Section 2.6: Back to Basics
+## Section 2.7b: Back to Basics
 
 Back to Basics
 
@@ -38,7 +38,7 @@ So, the phase space itself is just the space of all possible states of the syste
 A single, autonomous second order differential equation will give you a two dimensional phase space. The differential equation can also be rewritten as two first order autonomous differential equations:
 
 $$
-\\\dot{\theta{}}\left(t\right)=v\left(t\right)
+\dot{\theta{}}\left(t\right)=v\left(t\right)
 $$
 
 Where $v\left(t\right)$ is the angular velocity. This says that given the angle, and the velocity, the rate of change of the angle and velocity can be calculated directly.
@@ -46,7 +46,11 @@ Where $v\left(t\right)$ is the angular velocity. This says that given the angle,
 There is another way that we might end up with a two dimensional phase space, and that’s when the dynamical system is made up, from the start, of two systems which interact. For instance, a so-called predator-prey model (also called a Lotka-Volterra model). If you have a population of rabbits and foxes interacting (i.e. each reproducing, but the foxes eating the rabbits), this can be described by the following differential equations:
 
 $$
-\\\dot{F}\left(t\right)=\delta{} R\left(t\right) F\left(t\right)-\gamma{} F\left(t\right)
+\dot{R}\left(t\right)=\alpha R\left(t\right)-\beta R\left(t\right) F\left(t\right)
+$$
+
+$$
+\dot{F}\left(t\right)=\delta R\left(t\right) F\left(t\right)-\gamma F\left(t\right)
 $$
 
 where the parameters α, β, γ, δ are factors related to the environment and they will generally be fixed for a given system. $R\left(t\right) $is the rabbit population and $F\left(t\right) \text{ is the } \text{ fox population }$. The phase space again in this case is two-dimensional, made up now of the number of rabbits and the number of foxes:

@@ -19,7 +19,7 @@ math: true
 
 - Put the following systems of differential equations in the form of first order systems of autonomous differential equations.
 
-- $x'' \left(t\right) + 3 x' \left(t\right) - 4 x\left(t\right)=\text{ sin }\left(x$(t))
+- $x'' \left(t\right) + 3 x' \left(t\right) - 4 x\left(t\right)=\text{ sin }\left(x(t)\right)$
 
 - $x''\left(t\right)+y\left(t\right)+x'\left(t\right)={x\left(t\right)}^{2}, y'\left(t\right)+x\left(t\right)={x\left(t\right)}^{2}$
 

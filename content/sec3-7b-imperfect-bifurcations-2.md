@@ -3,7 +3,7 @@ title: "3.7b Imperfect Bifurcations and Catastrophes (Part 2)"
 weight: 37
 math: true
 ---
-## Section 3.6: Imperfect Bifurcations and Catastrophes
+## Section 3.7b: Imperfect Bifurcations and Catastrophes
 
 Imperfect Bifurcations and Catastrophes Cont.
 
@@ -75,7 +75,7 @@ $$
 \dot{N}=R N\left(1-\frac{N}{K}\right)-\frac{B N^{2}}{A^{2}+N^{2}}
 $$
 
-Which has four free parameters, R,k,B and x, and N is the population of insects. It’s possible to convert this into an expression involving only non-dimensional variables, which can be written as:
+Which has four free parameters, R, k, B and A, and N is the population of insects. It’s possible to convert this into an expression involving only non-dimensional variables, which can be written as:
 
 $$
 \dot{x}=r x \left(1-\frac{x}{k}\right)-\frac{x^{ 2}}{1+x^{ 2}}

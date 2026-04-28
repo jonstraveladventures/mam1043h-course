@@ -3,7 +3,7 @@ title: "3.8 Exercise 1b"
 weight: 40
 math: true
 ---
-## Exercises 3.1.a
+## Exercise 1b
 
 $For: \dot{x}=r-\text{ cosh }\left(x\right)$
 

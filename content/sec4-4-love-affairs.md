@@ -11,7 +11,7 @@ So, this is the last section of the notes, I know, it’s difficult for me too, 
 
 This example is adapted from Strogatz, and is based on [a paper of his from 1988](http://ai.stanford.edu/~rajatr/articles/SS_love_dEq.pdf).
 
-This is a tale of two penguins who can be found in Simon’s Town, just down the coast from here. Thando and Marsha are two penguins, and their relationship is... complicated. We will be modeling their love for one another. $T\left(t\right) \text{ measures }$ Thando’s love for Marsha and $M\left(t\right) $measures Marsha’s love for Thando. These variables can be positive (loving) or negative (hating). A nearby mathematically minded penguin named Erd[ODoubleDot]s has come up with a model for the couple’s dynamics. Erd [ODoubleDot]s the penguin claims that an appropriate model for what she has seen is:
+This is a tale of two penguins who can be found in Simon’s Town, just down the coast from here. Thando and Marsha are two penguins, and their relationship is... complicated. We will be modeling their love for one another. $T\left(t\right) \text{ measures }$ Thando’s love for Marsha and $M\left(t\right) $measures Marsha’s love for Thando. These variables can be positive (loving) or negative (hating). A nearby mathematically minded penguin named Erdős has come up with a model for the couple’s dynamics. Erdős the penguin claims that an appropriate model for what she has seen is:
 
 $$
 \dot{T}\left(t\right)=a M\left(t\right)

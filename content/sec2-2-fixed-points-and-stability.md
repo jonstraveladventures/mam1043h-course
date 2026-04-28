@@ -43,7 +43,7 @@ This picture is called a **phase portrait** and gives us a lot of qualitative fe
 
 If we start to the left of the right dot, we are going to flow over towards the left dot, but never reach it **remember**!
 
-The direction of the arrow is given by the sign of $\dot{x}$ and the magnitude its magnitude (At the point)
+The direction of the arrow is given by the sign of $\dot{x}$ and the magnitude (At the point)
 
 The arrows are called a **flow diagram**.
 
@@ -69,7 +69,7 @@ $$
 
 - A fixed point is unstable if $f\left(x\right)$ goes from negative to positive through zero as you increase $x$
 
-Fixed points are also know as equilibrium solutions, steady-state solutions or just constant solutions.
+Fixed points are also known as equilibrium solutions, steady-state solutions or just constant solutions.
 
 As $x \left(t\right)=x^{*}$ will be a solution for all time. The tricky thing about these is that, if you don't start at a steady state solution, you will never get to one. Can you see why? (Look [here](/sec2-1-fixed-points-and-trajectories/) if not)
 
