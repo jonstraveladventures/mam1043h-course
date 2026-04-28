@@ -774,12 +774,18 @@ def cell_to_md(cell: list, image_counter: list[int], images_dir: str,
         return f"- {text}" if text else None
 
     if cell_type in ("Subitem", "Subitem1", "Item2", "Item2Exercise"):
+        # Emit as flat "- " bullets rather than 4-space-indented sub-bullets.
+        # CommonMark treats 4-space-indented lines as code blocks unless
+        # they sit *immediately* under a list item, but the source
+        # often interleaves Subitem cells with prose paragraphs that
+        # break the list context. Flat bullets render cleanly; the
+        # visual nesting is sacrificed but the math stays rendered.
         text = clean_text_whitespace(extract_text(content)).strip()
-        return f"    - {text}" if text else None
+        return f"- {text}" if text else None
 
     if cell_type in ("Subsubitem", "Subsubitem1", "Item3"):
         text = clean_text_whitespace(extract_text(content)).strip()
-        return f"        - {text}" if text else None
+        return f"- {text}" if text else None
 
     if cell_type in ("ItemNumbered",):
         text = clean_text_whitespace(extract_text(content)).strip()

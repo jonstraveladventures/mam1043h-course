@@ -39,7 +39,10 @@ NOTEBOOKS=(
   "MAM1043part2f.nb|sec2-6-potentials.md|26|part2f|2.6 Potentials|"
   "MAM1043part2g.nb|sec2-7a-solving-on-computer.md|27|part2g|2.7a Solving Equations on the Computer|"
   "MAM1043part2h.nb|sec2-7b-back-to-basics.md|28|part2h|2.7b Back to Basics — Phase Spaces and Phase Portraits|"
-  "MAM1043part2exercises.nb|sec2-8-exercises.md|29|part2exercises|2.8 Exercises for Part 2|"
+  # NOTE: sec2-8-exercises.md is hand-curated (cleaner section headings &
+  # (a)(b)(c) sub-labels than the auto-parser produces). Re-enable this
+  # entry only if you want to regenerate from source.
+  # "MAM1043part2exercises.nb|sec2-8-exercises.md|29|part2exercises|2.8 Exercises for Part 2|"
   "MAM1043part2answers.nb|sec2-8-answers.md|30|part2answers|2.8 Answers to Exercises for Part 2|"
 
   # Section 3: Bifurcations
