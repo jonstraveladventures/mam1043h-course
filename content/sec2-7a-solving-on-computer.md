@@ -113,7 +113,7 @@ Let’s do it for more points, and with slightly shorter lines:
 
 We can picture this like looking at a stream, where you have dropped a little bit of coloured dye into many points, and are watching the flow. You can imagine that you start at some point, move along that line, then find the nearest next line, and follow that, etc. This gives you a trajectory.
 
-![Figure 12](/images/part2g/output_012.png)
+![Trajectory through direction field](/images/part2g/anim_001.gif)
 
 These lines are known as **direction fields** and are another way of figuring out the behaviour without actually having to solve the differential equation.
 
@@ -123,9 +123,9 @@ $$
 \dot{x}=x
 $$
 
-Our direction field would look like this, with a particle traced through it:
+Our direction field would look like this:
 
-![Trajectory through direction field](/images/part2g/anim_001.gif)
+![Figure 13](/images/part2g/output_013.png)
 
 Which is a perfectly good direction field, but we notice that the gradients of the lines have nothing to do with the value of $t$ as we would expect from the equation. We can spot here the fixed point of $x=0$, and indeed note that it is an unstable fixed point. You will always flow away from it.
 
