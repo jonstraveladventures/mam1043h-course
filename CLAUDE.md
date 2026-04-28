@@ -9,8 +9,8 @@ is hidden, text cells become prose, math cells become KaTeX LaTeX.
 
 ## Current Status
 
-- **Live site**: https://jonstraveladventures.github.io/mam1043h-course/
-- **Repo**: `jonstraveladventures/mam1043h-course`
+- **Live site**: https://shocklab.github.io/mam1043h-course/
+- **Repo**: `shocklab/mam1043h-course`
 - **Notebooks**: `/Users/jonathanshock/Cursor folders/MAM2046/MAM1043H/` (40 .nb files)
 - **Site root**: `/Users/jonathanshock/Cursor folders/MAM1043H-site/`
 - **Stats**: 40/40 notebooks parsing cleanly, ~240 PNGs, **16 animation GIFs**
@@ -254,7 +254,7 @@ threshold fixes. `v9` is the single source of truth.
 - gifsicle: `/opt/homebrew/bin/gifsicle` (for adjusting GIF timing post-render)
 - Notebooks: `/Users/jonathanshock/Cursor folders/MAM2046/MAM1043H/`
 - Site: `/Users/jonathanshock/Cursor folders/MAM1043H-site/`
-- GitHub repo: `jonstraveladventures/mam1043h-course`
+- GitHub repo: `shocklab/mam1043h-course`
 
 ## Useful one-liners
 
