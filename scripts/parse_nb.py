@@ -1042,6 +1042,23 @@ def main():
     # "1.6 Exercises..." between the 1.3–1.5 cluster and the Section 2 header
     # only becomes visible once the full document is assembled).
     md = _bulletize_toc_lines(md)
+    # Flatten "    - " bullets that are sandwiched between two top-level
+    # "- " bullets — the source notebook sometimes has author-introduced
+    # whitespace that makes a flat list-item look indented to the parser.
+    # Conservative: only fire when both neighbouring non-blank lines are
+    # already flat bullets.
+    md_lines = md.split("\n")
+    for i, ln in enumerate(md_lines):
+        m = re.match(r"^    - (.+)", ln)
+        if not m:
+            continue
+        prev = next((md_lines[j] for j in range(i - 1, -1, -1)
+                     if md_lines[j].strip()), "")
+        nxt  = next((md_lines[j] for j in range(i + 1, len(md_lines))
+                     if md_lines[j].strip()), "")
+        if prev.startswith("- ") and nxt.startswith("- "):
+            md_lines[i] = "- " + m.group(1)
+    md = "\n".join(md_lines)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(md, encoding="utf-8")

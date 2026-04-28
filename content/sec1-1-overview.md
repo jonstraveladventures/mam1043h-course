@@ -139,7 +139,7 @@ All of these differential equations are in terms of time, but a differential equ
 If you’re given a differential equation describing some complicated system, like populations of rabbits and wolves, or planets moving around each other, or neurons firing in the brain, we very often can figure out some behavioural traits without solving the equation. This 2nd half of MAM1043H is about solving these so-called dynamical systems. Systems of interacting elements (things) which are described by differential equations. We will see lots along the way, but the types of things that we might be interested in are:
 
 - A planet moving around a star
-    - A population of rhinos interacting with a population of poachers
+- A population of rhinos interacting with a population of poachers
 - The propagation of light from a lightbulb through the air
 - The price of oil 
 - The flow of water through a river 
@@ -149,10 +149,10 @@ If you’re given a differential equation describing some complicated system, li
 - The swinging of a pendulum
 - The firing of a single neuron in your brain
 - The firing of all of the neurons in your brain
-    - The growth of the internet
+- The growth of the internet
 - The flow of heat through a piece of metal
 - The spread of fire through a forest
-    - The running of a computer program
+- The running of a computer program
 - The increase in the number of bacteria in a sample
 - and so many more!
 
@@ -175,7 +175,7 @@ Now try and complete the list below on your own, as much as you can. There are m
 - The weather
 - The evolution of life on Earth
 - The expansion of the universe
-    - The swinging of a pendulum
+- The swinging of a pendulum
 - The firing of a single neuron in your brain
 - The firing of all of the neurons in your brain
 - The growth of the internet
