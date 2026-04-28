@@ -102,8 +102,8 @@ This way you are slowly but surely moving towards a more and more accurate pictu
  So, what is the type of mathematics that you might want to use to describe physical reality? Well, in the first semester you saw a number of different methods that can be used:
 
 - Write down the likely probability of something happening.
-    - Write down an equation using dimensional analysis.
-   - Write down a differential equation which you think may describe your system.
+- Write down an equation using dimensional analysis.
+- Write down a differential equation which you think may describe your system.
 
 You will have seen differential equations in MAM1044H and a little in this course already. Essentially, the definition couldn't be simpler. 
 They are equations...with derivatives in them. Here are a few examples:
@@ -168,7 +168,7 @@ What do all of these things have in common?
 - A population of rhinos interacting with a population of poachers: The number of rhinos and poachers are changing over time. The rhinos and poachers are interacting with each other, but the rhinos also depend on the amount of food around, and many other factors. The number of poachers depends on economic factors, family dynamics, police enforcement.
 - The propagation of light from a lightbulb through the air: Light is an excitation of the electromagnetic field. The position of photons changes with time. 
 - The price of oil: The price changes over time. It is dependent on the supply and demand.
-    - The flow of water through a river: We can treat the individual water molecules, or we can talk about the velocity of water at any one point and see how that changes over time.
+- The flow of water through a river: We can treat the individual water molecules, or we can talk about the velocity of water at any one point and see how that changes over time.
 
 Now try and complete the list below on your own, as much as you can. There are many ways to answer this, and most of them are very complicated systems. It's more a matter of getting you to think about it than getting a fixed answer.
 
@@ -182,8 +182,8 @@ Now try and complete the list below on your own, as much as you can. There are m
 - The flow of heat through a piece of metal
 - The spread of fire through a forest
 - The running of a computer program
-    - The increase in the number of bacteria in a sample
-    - and so many more!
+- The increase in the number of bacteria in a sample
+- and so many more!
 
 Now try and write down some dynamical systems of your own... ie. interacting things which change in time.
 

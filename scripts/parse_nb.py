@@ -1042,22 +1042,52 @@ def main():
     # "1.6 Exercises..." between the 1.3–1.5 cluster and the Section 2 header
     # only becomes visible once the full document is assembled).
     md = _bulletize_toc_lines(md)
-    # Flatten "    - " bullets that are sandwiched between two top-level
-    # "- " bullets — the source notebook sometimes has author-introduced
-    # whitespace that makes a flat list-item look indented to the parser.
-    # Conservative: only fire when both neighbouring non-blank lines are
-    # already flat bullets.
+    # Flatten orphan-indented bullets.  Source notebooks sometimes have
+    # author-typed whitespace that makes flat list items look indented
+    # to the parser (4 leading spaces or stray tabs).  CommonMark then
+    # renders them as nested sub-bullets with the wrong glyph.
+    #
+    # Rule: walk each *contiguous run* of indented bullets (lines whose
+    # only leading content is whitespace + "- ").  If the non-blank line
+    # immediately before the run is a flat "- " bullet, the whole run
+    # was authored as a continuation of that flat list and any indent
+    # inside the run is spurious — flatten every line to "- ".
     md_lines = md.split("\n")
-    for i, ln in enumerate(md_lines):
-        m = re.match(r"^    - (.+)", ln)
-        if not m:
+    indent_re = re.compile(r"^( +)- (.*)$")
+    flat_re = re.compile(r"^- ")
+    i = 0
+    n = len(md_lines)
+    while i < n:
+        if not indent_re.match(md_lines[i]):
+            i += 1
             continue
-        prev = next((md_lines[j] for j in range(i - 1, -1, -1)
-                     if md_lines[j].strip()), "")
-        nxt  = next((md_lines[j] for j in range(i + 1, len(md_lines))
-                     if md_lines[j].strip()), "")
-        if prev.startswith("- ") and nxt.startswith("- "):
-            md_lines[i] = "- " + m.group(1)
+        # Found a run of indented bullets — extend while consecutive
+        # lines are either indented bullets or blank.
+        run_start = i
+        run_end = i
+        j = i
+        while j < n:
+            if indent_re.match(md_lines[j]):
+                run_end = j
+                j += 1
+                continue
+            if md_lines[j].strip() == "":
+                j += 1
+                continue
+            break
+        # Look at the line just before run_start (skipping blanks).
+        prev = ""
+        for k in range(run_start - 1, -1, -1):
+            if md_lines[k].strip():
+                prev = md_lines[k]
+                break
+        # Flatten only if the run sits inside an existing flat list.
+        if flat_re.match(prev):
+            for k in range(run_start, run_end + 1):
+                m = indent_re.match(md_lines[k])
+                if m:
+                    md_lines[k] = "- " + m.group(2)
+        i = j
     md = "\n".join(md_lines)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
