@@ -45,7 +45,7 @@ This looks bad! We seem to end up with a negative population. Well, while this d
 
 Let’s look at a range of starting values between 0 and 1:
 
-![Figure 4](/images/part3e/output_004.png)
+![Logistic map iteration with r = 2, varying P_0](/images/part3e/anim_001.gif)
 
 We see that there are two fixed points here. One at 0, which is reached when you either start with $P_{0}=0,$ or $P_{0}=1$, and another one. A fixed point is defined by $P_{n}=P_{n-1}$ and so they can be found by solving:
 
@@ -61,11 +61,11 @@ $$
 
 which for the case of $r=2$ gives 0 and 0.5. What happens as we decrease $r$?
 
-![Figure 5](/images/part3e/output_005.png)
+![Logistic map iteration with r = 1.5, varying P_0](/images/part3e/anim_002.gif)
 
 For $r=1.5$ the second fixed point seems to have moved down a bit. Let's see what happens as we continue to alter $r$ :
 
-![Figure 6](/images/part3e/output_006.png)
+![Logistic map iteration: P_0 = 0.5, varying r](/images/part3e/anim_003.gif)
 
 For $r\leq 1$, there is only one fixed point, and it’s at $P=0$. For $r>1$ there is a second fixed point at $\frac{r-1}{r}$.
 
@@ -161,7 +161,7 @@ You can see that this seems to be chaotic... and indeed that's exactly what it i
 
 The strange thing is that within this chaos we see an island of calm, between around 3.605 and 3.6065. And indeed within the chaos you will keep seeing islands of calm.
 
-![Figure 15](/images/part3e/output_015.png)
+![Logistic map: 100 iterations, P_0 = 0.5, sweeping r through period-doubling cascade](/images/part3e/anim_004.gif)
 
 **Exercise:** Explore this with Python.
 
