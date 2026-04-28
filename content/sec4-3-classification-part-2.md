@@ -93,7 +93,7 @@ and Hallelujah, it’s completely real! That was messy, but you should go throug
 
 What on earth does this mean? Well, remember the top component of the vector is the position in $x$ and the bottom component is the position in y. We can ask what this looks like as a path in the $\left(x,y\right)$ plane and the answer is:
 
-![Figure 1](/images/part4c/output_001.png)
+![Classification animation 1](/images/part4c/anim_001.gif)
 
 Should we be surprised by this? Well, the fact that we had a positive real part to our eigenvalues tell us that we are going to have an exponentially growing solution, and the fact that there was an imaginary part tells us that we will be rotating.
 
@@ -103,7 +103,7 @@ The phase portrait for such a system is known as a **spiral**:
 
 There are three possible forms of rotation: If α is positive, then we will be spiralling out from the centre. If α is negative we will be spiralling into the centre, and if $\alpha{}=0$ we will have a periodic solution. These would look like, for $\alpha{}<0$ :
 
-![Figure 3](/images/part4c/output_003.png)
+![Classification animation 2](/images/part4c/anim_002.gif)
 
 With phase portrait:
 
@@ -111,7 +111,7 @@ With phase portrait:
 
 and of course for $\alpha{}=0$:
 
-![Figure 5](/images/part4c/output_005.png)
+![Classification animation 3](/images/part4c/anim_003.gif)
 
 Note that all of these correspond to initial conditions of $\left(x_{o},y_{o}\right)=\left(1,1\right)$. For the periodic solution, the period $T=\frac{2\pi{}}{\omega{}}$. A phase portrait for such a system is known as a **centre**. Here is an example where it’s periodic but the amplitude in x and y is different:
 
@@ -182,11 +182,3 @@ Where the red dots are fixed points, and in fact there’s a continuous line of 
 One can plot the regions in the space of Δ’s and τ’s which type of solutions you will get and this looks like:
 
 ![Figure 11](/images/part4c/output_011.png)
-## Animated versions
-
-![Animation](/images/part4c/anim_001.gif)
-
-![Animation](/images/part4c/anim_002.gif)
-
-![Animation](/images/part4c/anim_003.gif)
-

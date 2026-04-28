@@ -113,7 +113,7 @@ What this really means is that when we are at position $\frac{1}{2}$ and going a
 
 Now see what happens as you move the point of interest around in the plane:
 
-![Figure 5](/images/part4a/output_005.png)
+![2D linear system animation 1](/images/part4a/anim_001.gif)
 
 Now let’s plot lots of these arrows together in the plane to see the ‘flow’ of this system:
 
@@ -137,7 +137,7 @@ $$
 
 We can plot this in the plane:
 
-![Figure 7](/images/part4a/output_007.png)
+![2D linear system animation 2](/images/part4a/anim_002.gif)
 
 Such a circle is known as a **Closed Orbit** which is a general type of solution which comes back to itself in phase space. Such an orbit will always correspond to an oscillatory solution.
 
@@ -244,9 +244,3 @@ We can do the same thing for other values of initial conditions and values of $a
 Now try and plot the trajectories for some of these different initial conditions and values of $a$.
 
 You will explore the fixed point structure of this system in the [Exercises for part 4](/sec4-5-exercises/).
-## Animated versions
-
-![Animation](/images/part4a/anim_001.gif)
-
-![Animation](/images/part4a/anim_002.gif)
-

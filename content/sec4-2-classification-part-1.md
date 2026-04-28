@@ -123,7 +123,7 @@ Note that actually once we’ve found an eigenvector $v$, any scalar multiple of
 
 OK, so now we actually want to see how to find these eigenvectors rather than just check that one you’ve been handed is really an eigenvector. The method is relatively straightforward.
 
-To find the eigenvalues, λ, of a matrix $A$=$\left(\begin{matrix} a & b \\ c & d \end{matrix}\right)$, we need to solve the equation:
+To find the eigenvalues, λ, of a matrix $A=\left(\begin{matrix} a & b \\ c & d \end{matrix}\right)$, we need to solve the equation:
 
 $$
 \text{ det }\left(A-\lambda{} I\right)=0
@@ -263,7 +263,7 @@ $$
 \left(\begin{matrix} -0.5 \\ 3 \end{matrix}\right)=c_{1}\left(\begin{matrix} 1 \\ 1 \end{matrix}\right)  +c_{2}\left(\begin{matrix} 1 \\ -4 \end{matrix}\right)
 $$
 
-You can write this as: $-0.5=c_{1}+c_{2}$, $3=c_{1}-4c_{2}$ and solve this to get: $c_{1}=0.2$, $c_{2}=-0.7$, so the solution will be:
+You can write this as: $-0.5=c_{1}+c_{2}, 3=c_{1}-4c_{2}$ and solve this to get: $c_{1}=0.2, c_{2}=-0.7$, so the solution will be:
 
 $$
 x\left(t\right)=0.2e^{2t }\left(\begin{matrix} 1 \\ 1 \end{matrix}\right)  -0.7e^{-3t}\left(\begin{matrix} 1 \\ -4 \end{matrix}\right)
@@ -287,7 +287,7 @@ and some more:
 
 An animation starting with these points will look like:
 
-![Figure 6](/images/part4b/output_006.png)
+![Classification animation](/images/part4b/anim_001.gif)
 
 It took us quite a long time to get here, but let’s put it all together and see how we could solve this much quicker. The original DE was:
 
@@ -342,7 +342,3 @@ One thing which is very important to note here is that when we get close to the 
 And unsurprisingly, if the eigenvalues are both positive, everything is going to explode out from the centre: Exactly the same as the above but you can imagine it all going the other way.
 
 Let’s stop there for now and in the next lesson we will look at what happens when we have complex eigenvalues.
-## Animated versions
-
-![Animation](/images/part4b/anim_001.gif)
-

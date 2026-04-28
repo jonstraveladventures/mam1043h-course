@@ -377,6 +377,49 @@ _WOLFRAM_LINK_RE = re.compile(
 )
 
 
+# Math keywords that should be rendered with a backslash inside math.
+_MATH_KEYWORDS = ("cos", "sin", "tan", "ln", "log", "exp", "sec", "csc",
+                  "cot", "arccos", "arcsin", "arctan", "sinh", "cosh",
+                  "tanh", "min", "max", "lim", "sup", "inf")
+_MATH_KEYWORDS_RE = re.compile(
+    r"(?<![\\A-Za-z])(" + "|".join(_MATH_KEYWORDS) + r")(?![A-Za-z])"
+)
+# What's allowed *between* two `$..$` blocks for them to merge into one:
+# operators, digits, parens, math keywords (with no other letters), etc.
+_BETWEEN_OK_RE = re.compile(
+    r"^[\s=+\-*/^(),.\d|]*"
+    r"(?:(?:" + "|".join(_MATH_KEYWORDS) + r")[\s=+\-*/^(),.\d|]*)*$"
+)
+
+
+def _merge_inline_math_blocks(s: str) -> str:
+    """Coalesce sequences like ``$\dot{x}$ = 3 $x$ + 2`` into one math block.
+
+    Wolfram authors sometimes write equations as a chain of small inline
+    BoxData cells separated by plain operator/digit text.  Each piece
+    becomes its own ``$..$`` after parsing, but the result reads worse
+    than a single math block.  Repeatedly merge adjacent blocks where
+    the gap between them is purely operators/digits/parentheses (and
+    optionally bare math keywords like ``cos``, ``sin``, ``ln``).
+    """
+    pat = re.compile(r"\$([^$\n]+)\$([^$\n]{0,60})\$([^$\n]+)\$")
+
+    def merge_one(m: "re.Match[str]") -> str:
+        between = m.group(2)
+        if not _BETWEEN_OK_RE.match(between):
+            return m.group(0)
+        # Promote bare keywords (cos, sin, ln…) inside the merged region
+        # to LaTeX commands so they typeset properly.
+        merged_between = _MATH_KEYWORDS_RE.sub(r"\\\1", between)
+        return f"${m.group(1)}{merged_between}{m.group(3)}$"
+
+    prev = None
+    while prev != s:
+        prev = s
+        s = pat.sub(merge_one, s)
+    return s
+
+
 def _rewrite_wolfram_links(s: str) -> str:
     def repl(m: "re.Match[str]") -> str:
         handle = m.group(1)
@@ -398,6 +441,8 @@ def clean_text_whitespace(s: str) -> str:
     s = re.sub(r'\n{3,}', '\n\n', s)
     # Rewrite wolframcloud.com cross-links to local Hugo pages.
     s = _rewrite_wolfram_links(s)
+    # Coalesce fragmented inline math (`$dot{x}$ = 3 $x$ + 2` → `$\dot{x} = 3x + 2$`)
+    s = _merge_inline_math_blocks(s)
     # Unwrap $...$ blocks that only contain \text{} fragments (plus prose)
     s = _INLINE_MATH_RE.sub(_unwrap_text_only_math, s)
     # Strip leaked Mathematica metadata

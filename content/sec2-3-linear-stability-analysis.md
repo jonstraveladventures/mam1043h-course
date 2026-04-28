@@ -15,7 +15,7 @@ $$
 \dot{x}=f\left(x\right)
 $$
 
-fixed point $x$ = $x^{*}$
+fixed point $x = x^{*}$
 
 Is there a way that we can tell whether it's stable or unstable?
 

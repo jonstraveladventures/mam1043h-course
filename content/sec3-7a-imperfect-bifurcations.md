@@ -61,7 +61,7 @@ which, for, let’s say $h=0.2$, will look like:
 
 As you can see, our lovely reflection symmetry is gone, and indeed the positions of the fixed points will also change.
 
-Our next step is to understand about the fixed points in the two dimensional parameter space of $\left(r$, $h$)
+Our next step is to understand about the fixed points in the two dimensional parameter space of $\left(r, h$)
 
 Let’s pick a value of $h$ and do our bifurcation analysis. We already know what this looks like for $h=0$. This is your good old-fashioned pitchfork bifurcation:
 

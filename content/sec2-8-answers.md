@@ -236,7 +236,7 @@ $$
 Expanding for small η gives:
 
 $$
-\dot{\eta{}}=-\left(\eta{}+\frac{{\eta{}}^{2}}{2}-\frac{{\eta{}}^{3}}{6}+{O\left[\eta{}\right]}^{4}Editable\to False\right]Editable\to False\right]\right)
+\dot{\eta{}}=-\left(\eta{}+\frac{{\eta{}}^{2}}{2}-\frac{{\eta{}}^{3}}{6}+{O\left[\eta{}\right]}^{4}\right]\right]\right)
 $$
 
 Linearising, gives:

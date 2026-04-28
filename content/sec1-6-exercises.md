@@ -21,7 +21,7 @@ math: true
 
     - $x'' \left(t\right) + 3 x' \left(t\right) - 4 x\left(t\right)=\text{ sin }\left(x$(t))
 
-    - $x''\left(t\right)+y\left(t\right)+x'\left(t\right)={x\left(t\right)}^{2}$, $y'\left(t\right)+x\left(t\right)={x\left(t\right)}^{2}$
+    - $x''\left(t\right)+y\left(t\right)+x'\left(t\right)={x\left(t\right)}^{2}, y'\left(t\right)+x\left(t\right)={x\left(t\right)}^{2}$
 
     - $y''\left(t\right)-y'\left(t\right)+x\left(t\right)={y\left(t\right)}^{2}, x'\left(t\right)=\text{ sin }\left(y\left(t\right)\right)$
 

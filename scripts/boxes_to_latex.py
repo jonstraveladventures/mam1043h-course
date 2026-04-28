@@ -8,6 +8,75 @@ typesetting. Called by parse_nb.py.
 import re
 import warnings
 
+# Mathematica option/style names that sometimes appear as flat tokens inside
+# RowBox children when the parser linearises a "name -> value" Rule. They're
+# display flags, never mathematical content — drop them and the trailing
+# "-> value" pair when seen.
+_OPTION_NAMES: frozenset[str] = frozenset({
+    "Editable", "Selectable", "StripOnInput", "DisplayFunction",
+    "DefaultBaseStyle", "BaseStyle", "BoxBaselineShift", "BoxFrame",
+    "BoxMargins", "Background", "RoundingRadius", "Frame", "FrameLabel",
+    "FrameTicks", "FrameStyle", "GridLines", "GridLinesStyle",
+    "FontSize", "FontWeight", "FontSlant", "FontColor", "FontVariations",
+    "FontFamily", "TextJustification", "LineSpacing", "FontTracking",
+    "ImageSize", "ImageMargins", "ImagePadding", "PlotRange", "PlotRangePadding",
+    "AxesLabel", "AxesOrigin", "AxesStyle", "Axes", "AspectRatio",
+    "PlotLabel", "PlotPoints", "PlotStyle", "PlotLegends", "PlotMarkers",
+    "ColorFunction", "ColorFunctionScaling", "PerformanceGoal", "Method",
+    "MaxIterations", "InterpretationFunction", "ButtonData", "ButtonNote",
+    "ContentSize", "Alignment", "Spacings", "ItemSize", "ColumnLines",
+    "RowLines", "Dividers", "Background", "AutoSpacing",
+    "LabelStyle", "TickDirection", "Ticks", "TicksStyle",
+    "PlotRangeClipping", "BoxRatios", "ViewPoint", "ViewVertical",
+    "ViewAngle", "ViewProjection", "Boxed", "Lighting",
+    "ButtonFunction", "Tooltip", "Setting", "FaceForm", "EdgeForm",
+    "AnnotationFunction", "RasterSize", "ColorSpace", "Selectable",
+    "Initialization", "Deinitialization", "TrackedSymbols", "SaveDefinitions",
+    "AnimationRate", "AnimationRepetitions", "AnimationDirection",
+    "DisplayDurations", "ImageResolution", "DefaultDuration",
+    "FormatType", "TextAlignment", "TextStyle", "TextRendering",
+    "FrontFaceColor", "BackFaceColor", "GraphicsColor", "LineColor",
+    "Selectable",
+})
+
+
+def _strip_option_triplets(children):
+    """Drop ``[name, "->", value]`` flat-token triplets and bare ``Rule``
+    nodes whose LHS matches a known option name.
+
+    Wolfram serialises options like ``Editable -> False`` as either a flat
+    triplet inside a parent's args, or as ``["Rule", lhs, rhs]``. Either
+    way we want to suppress them when rendering math.
+    """
+    out: list = []
+    i = 0
+    n = len(children)
+    while i < n:
+        c = children[i]
+        # Flat triplet: name "->" value
+        if (
+            isinstance(c, str)
+            and c in _OPTION_NAMES
+            and i + 2 < n
+            and children[i + 1] in ("->", "\\[Rule]", "\\[RuleDelayed]")
+        ):
+            i += 3
+            continue
+        # Rule node
+        if (
+            isinstance(c, list)
+            and len(c) >= 3
+            and c[0] in ("Rule", "RuleDelayed")
+            and isinstance(c[1], str)
+            and c[1] in _OPTION_NAMES
+        ):
+            i += 1
+            continue
+        out.append(c)
+        i += 1
+    return out
+
+
 # ── Wolfram special-character maps ──────────────────────────────────────────
 
 # Characters that appear in math contexts → LaTeX commands
@@ -357,6 +426,14 @@ def box_to_latex(node) -> str:
     head = node[0]
     args = node[1:]
 
+    # Known Mathematica option names that sometimes leak through the parse
+    # tree as `[name, "->", value]` flat-token sequences inside RowBox or
+    # other generic nodes.  These should never appear in the rendered math
+    # — they're style/display flags, not mathematical content.  Catching
+    # them at the start prevents `Editable\to False` and similar artefacts.
+    if isinstance(head, str) and head in _OPTION_NAMES:
+        return ""
+
     match head:
 
         # Graphics objects embedded in math/text — not renderable as LaTeX
@@ -364,9 +441,13 @@ def box_to_latex(node) -> str:
               | "DynamicBox" | "DynamicModuleBox"):
             return ""   # silently skip
 
+        case "Rule" | "RuleDelayed":
+            return ""   # rules are options, never math
+
         case "RowBox":
             # args = [list_of_children]
             children = args[0] if args and isinstance(args[0], list) else args
+            children = _strip_option_triplets(children)
             result = "".join(box_to_latex(c) for c in children)
             return merge_text_runs(result)
 

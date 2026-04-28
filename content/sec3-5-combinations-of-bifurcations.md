@@ -151,14 +151,10 @@ You could have done the above, but changed the value of $r$ slowly, in which cas
 
 Here we can see it all together, with a dial for $r$ on the left, the trajectory in the ($t$, $x$) in the middle, and the trajectory around the bifurcation plot on the right.
 
-![Figure 17](/images/part3d/output_017.png)
+![Combined bifurcations animation](/images/part3d/anim_001.gif)
 
 Here is a really strange example of hysteresis: If you take water at room temperature and freeze it, it will take a certain amount of time to freeze. However, if you boil water, and then freeze it, it actually freezes faster, despite the fact that in order to freeze, it has to pass through the room temperature state.
 
 There is information in the system about what happened to it in the past (you can think of it as remembering that it was in a high temperature state - though note very very importantly, this "memory" is not like the memory which people claim that water has in homeopathy. That isn't memory, it's wishful thinking). This phenomenon with water is called the **[Mpemba Effect](https://en.wikipedia.org/wiki/Mpemba_effect)**, named after the Tanzanian schoolboy who discovered it. It's actually not completely agreed upon what is the cause of this effect.
 
 That was a lot! We’re going to look at something a bit different on the next page before returning to the study of these bifurcations.
-## Animated versions
-
-![Animation](/images/part3d/anim_001.gif)
-

@@ -21,7 +21,7 @@ Now taking the arrows and fixed points alone and plotting them as a vector field
 
 $\dot{x}=r+\frac{x}{2}-\frac{x}{1+x}$
 
-There is actually a much easier way to think about plotting the bifurcation diagram than this though. Remember the equation is:$\dot{x}=r+\frac{x}{2}-\frac{x}{1+x}$
+$There \text{ is actually } a \text{ much easier } \text{ way to } \text{ think about } \text{ plotting the } \text{ bifurcation diagram } \text{ than this } \text{ though }. Remember \text{ the equation } \text{ is }: \dot{x}=r+\frac{x}{2}-\frac{x}{1+x}$
 
 The fixed points are found by solving for $\dot{x}=0$. There are two solutions as it results in a quadratic equation.
 
@@ -71,6 +71,6 @@ Now multiply everything by $2\sqrt{2}$:
 
 Now let $\sqrt{2} \left(-3+2 \sqrt{2}+2 r\right)$=R:
 
-And let $t=2\sqrt{2}T:$ $\left(\frac{d\eta{}}{\text{ dt }}=\frac{d\eta{}}{\text{ dT }}\frac{\text{ dT }}{\text{ dt }}=\frac{d\eta{}}{\text{ dT }}\frac{1}{2\sqrt{2}}\right)$
+And let $t=2\sqrt{2}T: \left(\frac{d\eta{}}{\text{ dt }}=\frac{d\eta{}}{\text{ dT }}\frac{\text{ dT }}{\text{ dt }}=\frac{d\eta{}}{\text{ dT }}\frac{1}{2\sqrt{2}}\right)$
 
 Which is the normal form for a saddle node bifurcation. You can do the same thing for the other critical point and you will find the same thing.

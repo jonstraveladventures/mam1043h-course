@@ -59,7 +59,7 @@ $$
 
 It’s clear here that $x=1$, is always a fixed point of the system, but for $r<0$ there is also another fixed point. Let’s look at this system as we change $r$. In the following picture, you see that as $r$ changes, for the phase portrait on the left and the bifurcation diagram on the right.
 
-![Figure 5](/images/part3b/output_005.png)
+![Transcritical bifurcation animation 1](/images/part3b/anim_001.gif)
 
 We see here that we have what appears to be a transcritical bifurcation occurring close to $x=1$ and at $r_{c}=-1$. The question then is can we expand around this point (in $x$) and put the differential equation into normal form? Well, the answer is yes! If we perform a change of variables, but let’s take this step by step.
 
@@ -127,11 +127,11 @@ There’s another way that we can think about finding the bifurcation diagram if
 
 If we want to know when this function is zero, we can simply calculate when the graphs of $y=r \text{ ln }\left(x\right) \text{ and } y=1-x$ intercept. The point is that then the r is justa scaling factor. Plotting this for a range of values of r we see:
 
-![Figure 7](/images/part3b/output_007.png)
+![Transcritical bifurcation animation 2](/images/part3b/anim_002.gif)
 
 We see how the intersection points of the two graphs move. To work out which one is stable and which unstable, we just have to ask whether $r \text{ ln }\left(x\right) \text{ or } 1-x$ is larger just to the left of the intersection point (and just to the right). If $r \text{ ln }\left(x\right) \text{ is larger }, \text{ then } r \text{ ln }\left(x\right)+x-1$ is going to be positive, so $\dot{x}$ will be positive, so we will move towards the fixed point, and vice versa to the right, so this will correspond to a stable fixed point. Including this information on the above animation we have the stable fixed point in red, and the unstable in blue.
 
-![Figure 8](/images/part3b/output_008.png)
+![Transcritical bifurcation animation 3](/images/part3b/anim_003.gif)
 
 **Important Note**: Don’t let this example intimidate you! I know it looks complicated, and you might think it’s crazy how different it looks from start to finish, but really take time to step through it. Once you’ve do the exercise at the end, check it with the lecturer and see where you can improve. This kind of manipulation becomes incredibly important as you move forward and acing it now will set you on the right path!
 
@@ -156,11 +156,3 @@ $$
 $$
 
 and put this equation into normal form via a change of variables.
-## Animated versions
-
-![Animation](/images/part3b/anim_001.gif)
-
-![Animation](/images/part3b/anim_002.gif)
-
-![Animation](/images/part3b/anim_003.gif)
-

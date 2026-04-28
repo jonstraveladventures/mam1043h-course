@@ -17,7 +17,7 @@ $$
 
 This is similar to the saddle-node bifurcation normal form, but with an extra factor of $x$. Meaning we can write: $\dot{x}=x \left(r-x^{ 2}\right)$, so it's going to have the same fixed point behaviour as the saddle note, with an extra fixed point at $x=0$. We can see from this that that we will always have a fixed point at $x=0$, but as in the last example, it's not always going to be the same kind of fixed point.
 
-Let’s again draw in our phase portraits for $r<0$,$ r=0$ and $r>0$.
+Let’s again draw in our phase portraits for $r<0, r=0$ and $r>0$.
 
 ![Figure 1](/images/part3c/output_001.png)
 
