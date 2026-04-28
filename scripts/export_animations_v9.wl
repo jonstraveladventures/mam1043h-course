@@ -17,6 +17,7 @@ notebooks = {
   {"MAM1043part3a.nb", "part3a"},
   {"MAM1043part3b.nb", "part3b"},
   {"MAM1043part3d.nb", "part3d"},
+  {"MAM1043part3fii.nb", "part3fii"},
   (* part3e omitted: 22 Input cells with deeply nested Manipulate
      widgets cause v9's inputCells indexing to fail mid-run.
      The 3-dial Manipulate (Figure 16) is intended to become a

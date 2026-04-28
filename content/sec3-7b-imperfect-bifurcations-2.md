@@ -15,7 +15,7 @@ $$
 
 We know how to find fixed-points of a differential equation, and we have been finding these for different values of $h$ and then plotting the fixed points in $x$ on a graph as a function of $r$. This was what we had the last time:
 
-![Figure 1](/images/part3fii/output_001.png)
+![Imperfect pitchfork bifurcation, h sweeping from −1 to +1](/images/part3fii/anim_001.gif)
 
 In this case we are changing $h$ and seeing what happens to the fixed points. We can think of this as slicing through a surface where there is a new $h$ dimension. How about plotting this in three dimensions? i.e. as the fixed points of $x$ as a function of $r$ and $h$:
 
@@ -49,7 +49,7 @@ This strange shape is known as a **cusp catastrophe**. Why should it be called a
 
 Imagine that we have our parameter at, say $r=3$, and we are sat happily at our stable fixed point of around $x=-1.5$. Now let’s say something changes in the environment to decrease $r. $At $r=2$ our fixed point has moved to around $x=-0.9$. But then as we drop below $r=2$, our fixed point just.... vanishes. And all of a sudden we must move to the only fixed point in town, which is at around $x=1.6$. Let’s plot this...
 
-![Figure 7](/images/part3fii/output_007.png)
+![h = 1, r decreasing from 3 to −1: state jumps up when the lower branch ends](/images/part3fii/anim_007.gif)
 
 Something very interesting happens here if we want to move back in the other direction!
 
@@ -57,11 +57,11 @@ What happens if now you start to increase $r$ again? Well, you will actually fin
 
 This means that if the parameter changes even a tiny bit, you may well find that you are never able to get back to the situation that you were in before!
 
-![Figure 8](/images/part3fii/output_008.png)
+![h = 1, r increasing from −1 to 3: state stays on the upper branch (hysteresis)](/images/part3fii/anim_008.gif)
 
 In fact the easiest way to see what is going on here is in terms of a potential (See Plot Below). Imagine that you are sat at the bottom of the stable minimum on the left, and you decrease $r$, from $r=2.6$ down to a little less than $r=0$ and then up again. You will find that as you pass $r=2$, you will go into the situation where there is only one minimum, and then as you increase r again, you will stay in the right hand minimum. If you are then in that new minimum, it’s really hard to get out again... there’s a great big maximum sitting in your way.
 
-![Figure 9](/images/part3fii/output_009.png)
+![Potential V(x) hysteresis: r sweeps down then up; the state stays in the right-hand well](/images/part3fii/anim_009.gif)
 
 OK, there’s another way of plotting all of this. Let ’s look at the surface from above:
 
