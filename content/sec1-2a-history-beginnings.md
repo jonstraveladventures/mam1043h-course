@@ -15,11 +15,11 @@ The world already had a set of laws, thanks to [Kepler](https://en.wikipedia.org
 
 **The first law**: A planet’s orbit around the sun is an ellipse. The sun ’s centre is at one focus of the ellipse.
 
-![Figure 1](/images/part1b/output_001.png)
+![Animated ellipse: Kepler's first law](/images/part1b/anim_001.gif)
 
 **The second law**: If you draw a line between the planet and the sun, the area swept out by the line is the same in any given time period.
 
-![Figure 2](/images/part1b/output_002.png)
+![Animated area sweep: Kepler's second law](/images/part1b/anim_002.gif)
 
 **The third law**: The square of the period of a single orbit of a planet is proportional to the cube of the semi-major axis.
 
@@ -49,7 +49,7 @@ This means that you cannot write all solutions down in a finite number of ‘nor
 
 This is an example of a very special solution.
 
-![Figure 4](/images/part1b/output_004.png)
+![Three-body problem: figure-8 special solution](/images/part1b/anim_003.gif)
 
 *If any of you like reading science fiction, then* *[The Three Body Problem](https://en.wikipedia.org/wiki/The_Three-Body_Problem_(novel))* *(\:4e09\:9898\:ff09is a wonderful book by Liu Cixin.*
 
@@ -62,8 +62,3 @@ Well, it seems that writing down differential equations can be important to unde
 - Sometimes we can't solve these differential equations.
 
 This course will be about **trying to be as lazy as possible (but no lazier)**: getting answers without having to solve the differential equations (though sometimes we will).
-
-## Animated versions
-
-![Animation](/images/part1b/anim_001.gif)
-
